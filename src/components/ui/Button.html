@@ -1,0 +1,323 @@
+<!-- ============================================================================
+     SMB Website - Button Component
+     Reusable button with multiple variants and sizes
+     ============================================================================ -->
+
+<!-- Primary Button Template -->
+<button 
+  class="btn btn--{VARIANT} btn--{SIZE} {ADDITIONAL_CLASSES}"
+  type="{BUTTON_TYPE}"
+  {DISABLED_ATTR}
+  {DATA_ATTRIBUTES}
+  aria-label="{ARIA_LABEL}"
+  {EVENT_HANDLERS}
+>
+  {BUTTON_CONTENT}
+</button>
+
+<!-- Link Button Template -->
+<a 
+  href="{HREF}"
+  class="btn btn--{VARIANT} btn--{SIZE} {ADDITIONAL_CLASSES}"
+  role="button"
+  {TARGET_ATTR}
+  {REL_ATTR}
+  aria-label="{ARIA_LABEL}"
+>
+  {BUTTON_CONTENT}
+</a>
+
+<!-- Button with Icon Template -->
+<button 
+  class="btn btn--{VARIANT} btn--{SIZE} {ADDITIONAL_CLASSES}"
+  type="{BUTTON_TYPE}"
+  {DISABLED_ATTR}
+  aria-label="{ARIA_LABEL}"
+>
+  {IF_ICON_LEFT}
+  <svg class="btn__icon btn__icon--left" width="{ICON_WIDTH}" height="{ICON_HEIGHT}">
+    <use href="../assets/icons/{ICON_FILE}#{ICON_ID}"></use>
+  </svg>
+  {/IF_ICON_LEFT}
+  
+  <span class="btn__text">{BUTTON_TEXT}</span>
+  
+  {IF_ICON_RIGHT}
+  <svg class="btn__icon btn__icon--right" width="{ICON_WIDTH}" height="{ICON_HEIGHT}">
+    <use href="../assets/icons/{ICON_FILE}#{ICON_ID}"></use>
+  </svg>
+  {/IF_ICON_RIGHT}
+</button>
+
+<!-- Example Usage -->
+<!-- 
+Primary Button:
+<button 
+  class="btn btn--primary btn--md"
+  type="button"
+  aria-label="Learn about brand"
+>
+  О бренде
+</button>
+
+Green Button:
+<button 
+  class="btn btn--green btn--md"
+  type="submit"
+  aria-label="Purchase gift card"
+>
+  Подарить карту
+</button>
+
+Secondary Button:
+<button 
+  class="btn btn--secondary btn--sm"
+  type="button"
+  aria-label="Subscribe to newsletter"
+>
+  подписаться
+</button>
+
+Link Button:
+<a 
+  href="info/about.html"
+  class="btn btn--primary btn--md"
+  role="button"
+  aria-label="Learn about brand"
+>
+  О бренде
+</a>
+
+Button with Loading State:
+<button 
+  class="btn btn--green btn--md btn--loading"
+  type="submit"
+  disabled
+  aria-label="Processing purchase"
+>
+  <span class="btn__spinner"></span>
+  <span class="btn__text">Обработка...</span>
+</button>
+-->
+
+<style>
+/* Button Icon Styles */
+.btn__icon {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.btn__icon--left {
+  margin-right: var(--space-2);
+}
+
+.btn__icon--right {
+  margin-left: var(--space-2);
+}
+
+.btn:hover .btn__icon {
+  transform: scale(1.1);
+}
+
+/* Button Text */
+.btn__text {
+  display: inline-block;
+}
+
+/* Button Loading State */
+.btn--loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.btn--loading .btn__text {
+  opacity: 0.7;
+}
+
+.btn__spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: btn-spin 1s linear infinite;
+  margin-right: var(--space-2);
+}
+
+@keyframes btn-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button Group */
+.btn-group {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-group--center {
+  justify-content: center;
+}
+
+.btn-group--start {
+  justify-content: flex-start;
+}
+
+.btn-group--end {
+  justify-content: flex-end;
+}
+
+.btn-group--vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Button Full Width */
+.btn--full {
+  width: 100%;
+  min-width: auto;
+}
+
+/* Button Icon Only */
+.btn--icon-only {
+  width: var(--button-height-md);
+  height: var(--button-height-md);
+  padding: 0;
+  min-width: auto;
+  border-radius: 50%;
+}
+
+.btn--icon-only.btn--sm {
+  width: var(--button-height-sm);
+  height: var(--button-height-sm);
+}
+
+.btn--icon-only.btn--lg {
+  width: var(--button-height-lg);
+  height: var(--button-height-lg);
+}
+
+/* Button Outline Variants */
+.btn--outline {
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
+
+.btn--outline.btn--primary {
+  color: var(--green-dark);
+  border-color: var(--green-dark);
+}
+
+.btn--outline.btn--primary:hover:not(:disabled) {
+  background-color: var(--green-dark);
+  color: var(--white);
+}
+
+/* Button Ghost Variant */
+.btn--ghost {
+  background-color: transparent;
+  border: none;
+  color: var(--black);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background-color: var(--gray-100);
+}
+
+/* Button Danger Variant */
+.btn--danger {
+  background-color: #dc2626;
+  color: var(--white);
+  border: 1px solid #dc2626;
+}
+
+.btn--danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+  border-color: #b91c1c;
+}
+
+/* Button Success Variant */
+.btn--success {
+  background-color: #16a34a;
+  color: var(--white);
+  border: 1px solid #16a34a;
+}
+
+.btn--success:hover:not(:disabled) {
+  background-color: #15803d;
+  border-color: #15803d;
+}
+
+/* Responsive Button Styles */
+@media (max-width: 640px) {
+  .btn {
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .btn--md {
+    height: var(--button-height-sm);
+  }
+  
+  .btn--lg {
+    height: var(--button-height-md);
+  }
+  
+  .btn-group {
+    gap: var(--space-2);
+  }
+  
+  .btn-group--responsive {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn-group--responsive .btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* Focus and Accessibility */
+.btn:focus-visible {
+  outline: 2px solid var(--green-dark);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .btn {
+    border-width: 2px;
+  }
+  
+  .btn--primary {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--black);
+  }
+  
+  .btn--green {
+    background-color: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  .btn__spinner {
+    animation: none;
+  }
+}
+</style>

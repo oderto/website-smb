@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMB - Результаты поиска. Найдите нужные товары в нашем каталоге.">
+    <title>Результаты поиска - SMB</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/smb-logo.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <!-- Hamburger Menu Button (Visible on mobile) -->
+            <button class="header__hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+            </button>
+
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="header__nav-link">Главная</a>
+                <a href="catalog/index.html" class="header__nav-link">Каталог</a>
+                <a href="info/about.html" class="header__nav-link">О бренде</a>
+            </nav>
+
+            <div class="header__logo">
+                <a href="index.html" aria-label="SMB Home">
+                    <img src="assets/icons/smb-logo.svg" alt="SMB Logo" width="63" height="36">
+                </a>
+            </div>
+
+            <div class="header__actions">
+                <button class="header__action-btn" type="button" aria-label="Search products" data-action="search">
+                    <img src="assets/icons/search-icon.svg" alt="" width="18" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="View favorites" data-action="favorites">
+                    <img src="assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="Shopping cart" data-action="cart">
+                    <img src="assets/icons/shopping-bag-icon.svg" alt="" width="16" height="20">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="User account" data-action="account">
+                    <img src="assets/icons/person-icon.svg" alt="" width="20" height="18">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation (Hidden by default, shown on mobile menu toggle) -->
+    <nav class="mobile-nav mobile-nav--drawer hidden" role="navigation" aria-label="Mobile navigation" id="mobile-nav">
+        <div class="mobile-nav__overlay"></div>
+        <div class="mobile-nav__content">
+            <button class="mobile-nav__close" type="button" aria-label="Close menu">×</button>
+            <ul class="mobile-nav__list">
+                <li><a href="index.html" class="mobile-nav__link">Главная</a></li>
+                <li><a href="catalog/index.html" class="mobile-nav__link">Каталог</a></li>
+                <li><a href="info/about.html" class="mobile-nav__link">О бренде</a></li>
+                <li><a href="shop/cart.html" class="mobile-nav__link">Корзина</a></li>
+                <li><a href="shop/favorites.html" class="mobile-nav__link">Избранное</a></li>
+                <li><a href="account/profile.html" class="mobile-nav__link">Аккаунт</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="search-results">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="index.html" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current">
+                        <span class="breadcrumb__text">Результаты поиска</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="search-results__header">
+                <h1 class="search-results__title">Результаты поиска</h1>
+                <div class="search-results__info">
+                    <p class="search-results__count">Найдено: <span id="results-count">0</span> товаров</p>
+                    <div class="search-results__sort">
+                        <label for="sort-select" class="search-results__sort-label">Сортировать по:</label>
+                        <select id="sort-select" class="search-results__sort-select">
+                            <option value="relevance">Сначала популярные</option>
+                            <option value="price-asc">Цена: по возрастанию</option>
+                            <option value="price-desc">Цена: по убыванию</option>
+                            <option value="name-asc">Название: А-Я</option>
+                            <option value="name-desc">Название: Я-А</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-results__content">
+                <!-- Filter Sidebar (Desktop) -->
+                <aside class="search-results__filters">
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Категории</h3>
+                        <ul class="filter-list">
+                            <li class="filter-list__item">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" class="filter-checkbox__input" value="bags">
+                                    <span class="filter-checkbox__label">Сумки</span>
+                                    <span class="filter-checkbox__count">(42)</span>
+                                </label>
+                            </li>
+                            <li class="filter-list__item">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" class="filter-checkbox__input" value="accessories">
+                                    <span class="filter-checkbox__label">Аксессуары</span>
+                                    <span class="filter-checkbox__count">(28)</span>
+                                </label>
+                            </li>
+                            <li class="filter-list__item">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" class="filter-checkbox__input" value="wallets">
+                                    <span class="filter-checkbox__label">Кошельки</span>
+                                    <span class="filter-checkbox__count">(15)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Цена</h3>
+                        <div class="price-filter">
+                            <div class="price-filter__inputs">
+                                <input type="number" class="price-filter__input" placeholder="От" min="0">
+                                <span class="price-filter__divider">—</span>
+                                <input type="number" class="price-filter__input" placeholder="До" min="0">
+                            </div>
+                            <button class="btn btn--secondary btn--sm price-filter__apply">Применить</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Цвет</h3>
+                        <div class="color-filter">
+                            <button class="color-filter__item" data-color="black" aria-label="Черный"></button>
+                            <button class="color-filter__item" data-color="brown" aria-label="Коричневый"></button>
+                            <button class="color-filter__item" data-color="green" aria-label="Зеленый"></button>
+                            <button class="color-filter__item" data-color="beige" aria-label="Бежевый"></button>
+                            <button class="color-filter__item" data-color="white" aria-label="Белый"></button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Размер</h3>
+                        <ul class="filter-list">
+                            <li class="filter-list__item">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" class="filter-checkbox__input" value="small">
+                                    <span class="filter-checkbox__label">S</span>
+                                </label>
+                            </li>
+                            <li class="filter-list__item">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" class="filter-checkbox__input" value="medium">
+                                    <span class="filter-checkbox__label">M</span>
+                                </label>
+                            </li>
+                            <li class="filter-list__item">
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" class="filter-checkbox__input" value="large">
+                                    <span class="filter-checkbox__label">L</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn--secondary filter-reset">Сбросить фильтры</button>
+                </aside>
+
+                <!-- Mobile Filter Button -->
+                <button class="search-results__mobile-filters btn btn--secondary btn--sm" aria-label="Фильтры">
+                    Фильтры
+                </button>
+
+                <!-- Results Grid -->
+                <div class="search-results__grid">
+                    <!-- Product Cards will be dynamically inserted here -->
+                    <div class="search-results__placeholder">
+                        <img src="assets/icons/search-icon.svg" alt="" class="search-results__placeholder-icon" width="48" height="48">
+                        <h3 class="search-results__placeholder-title">По вашему запросу ничего не найдено</h3>
+                        <p class="search-results__placeholder-text">Попробуйте изменить запрос или сбросить фильтры</p>
+                        <a href="catalog/index.html" class="btn btn--green">Перейти в каталог</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__nav">
+            <a href="index.html" class="footer__nav-link">Store</a>
+            <a href="info/about.html" class="footer__nav-link">О бренде</a>
+            <a href="bag-stage.html" class="footer__nav-link">Bag Stage</a>
+            <a href="gift-cards.html" class="footer__nav-link">Подарочные карты</a>
+        </div>
+        
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Контакты</h3>
+                    <div class="footer__section-content">
+                        <a href="tel:88000000000" class="footer__link">8(800)000-00-00</a>
+                        <a href="mailto:info@smb.ru" class="footer__link">INFO@SMB.RU</a>
+                        <a href="#" class="footer__link">WHATSAPP</a>
+                        <a href="#" class="footer__link">TELEGRAM</a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">ПЛАТЕЖНЫЕ СИСТЕМЫ</h3>
+                    <div class="footer__section-content">
+                        <div class="footer__payment-logos">
+                            <img src="assets/icons/mir-logo.svg" alt="МИР" width="54" height="15">
+                            <img src="assets/icons/visa-logo.svg" alt="Visa" width="49" height="15">
+                            <img src="assets/icons/mastercard-logo.svg" alt="Mastercard" width="37" height="23">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Покупателям</h3>
+                    <div class="footer__section-content">
+                        <a href="delivery.html" class="footer__link">Доставка</a>
+                        <a href="payment.html" class="footer__link">Оплата</a>
+                        <a href="returns.html" class="footer__link">Возврат</a>
+                        <a href="loyalty.html" class="footer__link">Программа лояльности</a>
+                        <a href="gift-card-terms.html" class="footer__link">Правила приобретения и применения подарочных карт</a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Безопасность данных</h3>
+                    <div class="footer__section-content">
+                        <a href="privacy-policy.html" class="footer__link">Политика обработки персональных данных</a>
+                        <a href="privacy-consent.html" class="footer__link">Согласие на обработку персональных данных</a>
+                        <a href="public-offer.html" class="footer__link">Публичная оферта</a>
+                        <a href="user-agreement.html" class="footer__link">Пользовательское соглашение</a>
+                        <a href="marketing-consent.html" class="footer__link">Согласие на получение рекламной рассылки</a>
+                        <a href="metrics-consent.html" class="footer__link">Согласие на обработку персональных данных, собираемых метрическими системами</a>
+                        <a href="cookies.html" class="footer__link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__legal">
+                <p class="footer__legal-text">ИП «ФАМИЛИЯ ИМЯ»</p>
+                <p class="footer__legal-text">ИНН 00000000 ОГРНИП 000000000000</p>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <p class="footer__bottom-text">© SMB 2025</p>
+            <p class="footer__bottom-text">Разработано Effect.Web</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="utils/main.js" defer></script>
+    <script>
+        // Simple search functionality for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get search query from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('q') || '';
+            
+            // Update page title with search query
+            if (query) {
+                document.title = `Результаты поиска "${query}" - SMB`;
+                document.querySelector('.search-results__title').textContent = `Результаты поиска "${query}"`;
+            }
+            
+            // Simulate search results
+            const resultsCount = document.getElementById('results-count');
+            if (resultsCount) {
+                // In a real implementation, this would be based on actual search results
+                resultsCount.textContent = '0';
+            }
+            
+            // Add event listeners for filter interactions
+            const filterCheckboxes = document.querySelectorAll('.filter-checkbox__input');
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    console.log('Filter changed:', this.value, this.checked);
+                    // In a real implementation, this would filter the results
+                });
+            });
+            
+            // Add event listener for sort select
+            const sortSelect = document.getElementById('sort-select');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    console.log('Sort changed:', this.value);
+                    // In a real implementation, this would sort the results
+                });
+            }
+            
+            // Add event listener for mobile filter button
+            const mobileFilterBtn = document.querySelector('.search-results__mobile-filters');
+            if (mobileFilterBtn) {
+                mobileFilterBtn.addEventListener('click', function() {
+                    alert('В мобильной версии здесь откроются фильтры');
+                    // In a real implementation, this would open a filter modal
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+<style>
+/* Search Results Page Styles */
+.search-results {
+    background-color: var(--white);
+    min-height: calc(100vh - var(--header-height) - 200px);
+}
+
+.search-results__header {
+    padding: var(--space-8) 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.search-results__title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: var(--space-4);
+}
+
+.search-results__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.search-results__count {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+}
+
+.search-results__sort {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.search-results__sort-label {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.search-results__sort-select {
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    background-color: var(--white);
+    font-size: var(--text-sm);
+    cursor: pointer;
+}
+
+.search-results__content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--space-8);
+    padding: var(--space-8) 0;
+}
+
+.search-results__filters {
+    background-color: var(--gray-50);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    height: fit-content;
+}
+
+.filter-group {
+    margin-bottom: var(--space-6);
+}
+
+.filter-group__title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--black);
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+}
+
+.filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.filter-list__item {
+    padding: var(--space-1) 0;
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    cursor: pointer;
+}
+
+.filter-checkbox__input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.filter-checkbox__label {
+    font-size: var(--text-base);
+    color: var(--gray-700);
+    cursor: pointer;
+}
+
+.filter-checkbox__count {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    margin-left: auto;
+}
+
+.price-filter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.price-filter__inputs {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.price-filter__input {
+    flex: 1;
+    padding: var(--space-2);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+}
+
+.price-filter__divider {
+    color: var(--gray-500);
+}
+
+.price-filter__apply {
+    align-self: flex-end;
+}
+
+.color-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.color-filter__item {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--gray-300);
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+}
+
+.color-filter__item:hover,
+.color-filter__item:focus {
+    border-color: var(--green-dark);
+}
+
+.color-filter__item[data-color="black"] { background-color: #272727; }
+.color-filter__item[data-color="brown"] { background-color: #8B4513; }
+.color-filter__item[data-color="green"] { background-color: #91BE17; }
+.color-filter__item[data-color="beige"] { background-color: #F5F5DC; }
+.color-filter__item[data-color="white"] { background-color: #FFFFFF; }
+
+.filter-reset {
+    width: 100%;
+    margin-top: var(--space-4);
+}
+
+.search-results__mobile-filters {
+    display: none;
+    margin-bottom: var(--space-4);
+}
+
+.search-results__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-6);
+}
+
+.search-results__placeholder {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-16) 0;
+}
+
+.search-results__placeholder-icon {
+    margin-bottom: var(--space-4);
+    opacity: 0.5;
+}
+
+.search-results__placeholder-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    color: var(--black);
+    margin-bottom: var(--space-2);
+}
+
+.search-results__placeholder-text {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .search-results__content {
+        grid-template-columns: 200px 1fr;
+        gap: var(--space-6);
+    }
+    
+    .search-results__filters {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .search-results__header {
+        padding: var(--space-6) 0;
+    }
+    
+    .search-results__title {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-3);
+    }
+    
+    .search-results__info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-results__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .search-results__filters {
+        display: none;
+    }
+    
+    .search-results__mobile-filters {
+        display: block;
+    }
+    
+    .search-results__grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: var(--space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .search-results__title {
+        font-size: var(--text-xl);
+    }
+    
+    .search-results__header {
+        padding: var(--space-4) 0;
+    }
+    
+    .search-results__content {
+        gap: var(--space-3);
+    }
+    
+    .search-results__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
+    }
+    
+    .search-results__placeholder {
+        padding: var(--space-8) 0;
+    }
+}
+</style>

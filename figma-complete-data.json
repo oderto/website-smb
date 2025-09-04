@@ -1,0 +1,476 @@
+{
+  "metadata": {
+    "name": "SMB",
+    "lastModified": "2025-09-03T07:23:56Z",
+    "fileKey": "QzoQnskps4jOngxyOMUByD",
+    "nodeId": "687-53585",
+    "thumbnailUrl": "https://s3-alpha.figma.com/thumbnails/d998b0ea-bda0-48d8-ae8a-04e994d85cf3"
+  },
+  "components": {
+    "Scroll": {
+      "id": "656:51506",
+      "key": "752c663211d3041fe60b6988a6de0b3680856dc6",
+      "name": "Scroll",
+      "type": "Scrolling banner component"
+    },
+    "Header": {
+      "id": "342:26019",
+      "key": "a47b799ea1b428f70338c170352f520c95549aa7",
+      "name": "State=Default",
+      "componentSetId": "342:26020",
+      "type": "Navigation header"
+    },
+    "Product": {
+      "id": "342:24163",
+      "key": "f46138659508021b09189e7be684be40df214b74", 
+      "name": "Property=Default, State=Rest",
+      "componentSetId": "342:24164",
+      "type": "Product card component",
+      "variants": {
+        "default": "342:24163",
+        "new": "342:24231"
+      }
+    },
+    "Favorite": {
+      "id": "380:14859",
+      "key": "689f99454054b2553b87c8e28c317c96e8f8683f",
+      "name": "Property=Default",
+      "componentSetId": "380:14860",
+      "type": "Favorite button",
+      "variants": {
+        "default": "380:14859",
+        "checked": "380:14851"
+      }
+    },
+    "Button": {
+      "id": "380:14722",
+      "key": "43469e651d1f7e6d361711ac3e6af9ed6120a8be",
+      "name": "Property=Primary, size=L,State=Default",
+      "componentSetId": "342:27161",
+      "type": "Button component",
+      "variants": {
+        "primary_L": "380:14722",
+        "primary_green_L": "619:26610",
+        "secondary_green_M": "1021:48311"
+      }
+    },
+    "Footer": {
+      "id": "342:29533",
+      "key": "1ef17da3911ba24991dce425c16180acc2dbbe2c",
+      "name": "Footer",
+      "type": "Site footer component"
+    }
+  },
+  "pageStructure": {
+    "mainPage": "Главная upd",
+    "sections": [
+      {
+        "name": "Scroll Banner",
+        "type": "scrolling_text",
+        "content": ["DROP MINI MOSS 2 д 12 ч 7 м", "LIMIT MINI MOSS 2 д 12 ч 7 м", "ДРОП GOSHA 2 д 12 ч 7 м"]
+      },
+      {
+        "name": "Header",
+        "type": "navigation",
+        "elements": ["About", "Woman", "Man", "SMB Logo", "Search", "Favorites", "Cart", "Profile"]
+      },
+      {
+        "name": "New Collection",
+        "type": "product_grid",
+        "title": "new collection",
+        "products": [
+          {
+            "name": "MINI ROSA",
+            "price": "29 000 ₽",
+            "colors": ["brown", "tan", "black", "light_gray"],
+            "favorite": true,
+            "image": "product-1.png"
+          },
+          {
+            "name": "MINI ROSA", 
+            "price": "29 000 ₽",
+            "colors": ["brown", "tan", "black", "light_gray"],
+            "favorite": false,
+            "image": "product-1.png"
+          },
+          {
+            "name": "Moss",
+            "price": "29 000 ₽", 
+            "colors": ["brown", "tan", "black", "light_gray"],
+            "favorite": false,
+            "image": "product-moss-15277b.png"
+          },
+          {
+            "name": "MINI ROSA",
+            "price": "29 000 ₽",
+            "colors": ["brown", "tan", "black", "light_gray"],
+            "favorite": false,
+            "image": "product-1.png"
+          }
+        ]
+      },
+      {
+        "name": "Category Sections",
+        "type": "split_layout",
+        "sections": [
+          {
+            "title": "Woman",
+            "image": "woman-section.png",
+            "background": "#000000"
+          },
+          {
+            "title": "Man", 
+            "image": "man-section-48751d.png",
+            "background": "#272727"
+          }
+        ]
+      },
+      {
+        "name": "Featured Product",
+        "type": "hero_section",
+        "title": "MINI MOSS",
+        "image": "main-product-image.png",
+        "background": "#FAFAFA"
+      },
+      {
+        "name": "Instagram Section",
+        "type": "social_gallery",
+        "posts": [
+          {
+            "username": "@nikname_inst",
+            "image": "instagram-post-1.png"
+          },
+          {
+            "username": "@nikname_inst", 
+            "image": "instagram-post-2.png"
+          },
+          {
+            "text": "Слишком смело для всех, идеально для тебя",
+            "username": "@nikname_inst",
+            "image": "instagram-post-3.png"
+          },
+          {
+            "username": "@nikname_inst",
+            "image": "instagram-post-4-2f8fe1.png"
+          }
+        ]
+      },
+      {
+        "name": "Hero CTA",
+        "type": "call_to_action", 
+        "title": "SMB bag - твой лучший друг в большом городе",
+        "button": "О бренде",
+        "background": "hero-background-686e27.png"
+      },
+      {
+        "name": "NEW Products",
+        "type": "product_grid",
+        "title": "NEW",
+        "products": [
+          {
+            "name": "MINI ROSA",
+            "originalPrice": "29 000 ₽",
+            "salePrice": "21 000 ₽",
+            "colors": ["brown", "tan", "black", "light_gray"],
+            "badge": "NEW",
+            "favorite": false,
+            "image": "product-1.png"
+          },
+          {
+            "name": "MINI ROSA",
+            "originalPrice": "29 000 ₽", 
+            "salePrice": "21 000 ₽",
+            "colors": ["brown", "tan", "black", "light_gray"],
+            "badge": "NEW",
+            "favorite": false,
+            "image": "product-1.png"
+          },
+          {
+            "name": "MINI ROSA",
+            "originalPrice": "29 000 ₽",
+            "salePrice": "21 000 ₽", 
+            "colors": ["brown", "tan", "black", "light_gray"],
+            "badge": "NEW",
+            "favorite": false,
+            "image": "product-3.png"
+          },
+          {
+            "name": "MINI ROSA",
+            "originalPrice": "29 000 ₽",
+            "salePrice": "21 000 ₽",
+            "colors": ["brown", "tan", "black", "light_gray"],
+            "badge": "NEW", 
+            "favorite": false,
+            "image": "product-1.png"
+          }
+        ]
+      },
+      {
+        "name": "Gift Card Section",
+        "type": "call_to_action",
+        "title": "Подбери подарочную карту для себя или друга",
+        "button": "Подарить карту",
+        "background": "gift-card-background.png"
+      },
+      {
+        "name": "Newsletter",
+        "type": "subscription",
+        "title": "SMB secret club",
+        "description": "Cекретные скидки, еженедельные новости, письма от основателя бренда",
+        "button": "подписаться"
+      },
+      {
+        "name": "Footer",
+        "type": "footer",
+        "sections": {
+          "navigation": ["Store", "О бренде", "Bag Stage", "Подарочные карты"],
+          "contacts": {
+            "title": "Контакты",
+            "phone": "8(800)000-00-00",
+            "email": "INFO@SMB.RU",
+            "social": ["WHATSAPP", "TELEGRAM"]
+          },
+          "legal": {
+            "company": "ИП «ФАМИЛИЯ ИМЯ»",
+            "inn": "ИНН 00000000", 
+            "ogrnip": "ОГРНИП 000000000000"
+          },
+          "payments": {
+            "title": "ПЛАТЕЖНЫЕ СИСТЕМЫ",
+            "logos": ["mir-logo.svg", "visa-logo.svg", "mastercard-logo.svg"]
+          },
+          "customerInfo": {
+            "title": "Покупателям",
+            "links": ["Доставка", "Оплата", "Возврат", "Программа лояльности", "Правила приобретения и применения подарочных карт"]
+          },
+          "privacy": {
+            "title": "Безопасность данных",
+            "links": [
+              "Политика обработки персональных данных",
+              "Согласие на обработку персональных данных", 
+              "Публичная оферта",
+              "Пользовательское соглашение",
+              "Согласие на получение рекламной рассылки",
+              "Согласие на обработку персональных данных, собираемых метрическими системами",
+              "Cookies"
+            ]
+          },
+          "copyright": "© SMB 2025",
+          "developer": "Разработано Effect.Web"
+        }
+      }
+    ]
+  },
+  "designSystem": {
+    "colors": {
+      "primary": {
+        "black": "#272727",
+        "green": "#C2E028", 
+        "green_dark": "#91BE17",
+        "white": "#FFFFFF"
+      },
+      "secondary": {
+        "gray_light": "#F5F5F5",
+        "gray_medium": "#777777", 
+        "gray_dark": "#555555",
+        "gray_lighter": "#FAFAFA",
+        "gray_border": "rgba(0, 0, 0, 0.05)",
+        "text_muted": "rgba(39, 39, 39, 0.6)"
+      }
+    },
+    "typography": {
+      "fontFamily": "Helvetica Neue",
+      "weights": {
+        "regular": 400
+      },
+      "sizes": {
+        "heading_large": "28px",
+        "heading_medium": "16px", 
+        "body": "14px",
+        "small": "12px",
+        "tiny": "10px"
+      },
+      "lineHeights": {
+        "tight": "1.2em",
+        "normal": "1.3em"
+      },
+      "textCase": {
+        "uppercase": "UPPER"
+      }
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "xxl": "40px",
+      "xxxl": "60px",
+      "huge": "80px"
+    },
+    "layout": {
+      "containerWidth": "1440px",
+      "productCardHeight": "512px",
+      "headerHeight": "69px",
+      "buttonHeight": {
+        "large": "42px",
+        "medium": "38px"
+      }
+    },
+    "borderRadius": {
+      "button": "100px",
+      "small": "8px"
+    }
+  },
+  "assets": {
+    "icons": [
+      {
+        "name": "SMB Logo",
+        "file": "smb-logo.svg",
+        "size": "63x36"
+      },
+      {
+        "name": "Search",
+        "file": "search-icon.svg", 
+        "size": "18x18"
+      },
+      {
+        "name": "Favorite",
+        "file": "favorite-icon.svg",
+        "size": "20x18"
+      },
+      {
+        "name": "Favorite Filled",
+        "file": "favorite-filled.svg",
+        "size": "24x22"
+      },
+      {
+        "name": "Shopping Bag",
+        "file": "shopping-bag-icon.svg",
+        "size": "16x20"
+      },
+      {
+        "name": "Person",
+        "file": "person-icon.svg", 
+        "size": "20x18"
+      },
+      {
+        "name": "Arrow Left",
+        "file": "arrow-left.svg",
+        "size": "14x25"
+      },
+      {
+        "name": "Arrow Right", 
+        "file": "arrow-right.svg",
+        "size": "14x25"
+      },
+      {
+        "name": "Mir Payment",
+        "file": "mir-logo.svg",
+        "size": "54x15"
+      },
+      {
+        "name": "Visa Payment",
+        "file": "visa-logo.svg",
+        "size": "49x15"
+      },
+      {
+        "name": "Mastercard Payment",
+        "file": "mastercard-logo.svg", 
+        "size": "37x23"
+      }
+    ],
+    "images": [
+      {
+        "name": "Main Product Image",
+        "file": "main-product-image.png",
+        "size": "1068x1280",
+        "usage": "Featured product display"
+      },
+      {
+        "name": "Product 1",
+        "file": "product-1.png", 
+        "size": "1707x2560",
+        "usage": "Product card background"
+      },
+      {
+        "name": "Product Moss",
+        "file": "product-moss-15277b.png",
+        "size": "619x908",
+        "usage": "Product card background",
+        "cropped": true
+      },
+      {
+        "name": "Product 3",
+        "file": "product-3.png",
+        "size": "1707x2560", 
+        "usage": "Product card background"
+      },
+      {
+        "name": "Woman Section",
+        "file": "woman-section.png",
+        "size": "736x1104",
+        "usage": "Category section background"
+      },
+      {
+        "name": "Man Section",
+        "file": "man-section-48751d.png",
+        "size": "717x825",
+        "usage": "Category section background",
+        "cropped": true
+      },
+      {
+        "name": "Instagram Post 1",
+        "file": "instagram-post-1.png",
+        "size": "960x1280",
+        "usage": "Social media gallery"
+      },
+      {
+        "name": "Instagram Post 2", 
+        "file": "instagram-post-2.png",
+        "size": "921x1280",
+        "usage": "Social media gallery"
+      },
+      {
+        "name": "Instagram Post 3",
+        "file": "instagram-post-3.png",
+        "size": "1280x1003",
+        "usage": "Social media gallery"
+      },
+      {
+        "name": "Instagram Post 4",
+        "file": "instagram-post-4-2f8fe1.png",
+        "size": "1512x1668",
+        "usage": "Social media gallery",
+        "cropped": true
+      },
+      {
+        "name": "Hero Background",
+        "file": "hero-background-686e27.png",
+        "size": "2883x1441",
+        "usage": "Hero section background",
+        "cropped": true
+      },
+      {
+        "name": "Gift Card Background",
+        "file": "gift-card-background.png",
+        "size": "2880x1440",
+        "usage": "Gift card section background"
+      },
+      {
+        "name": "Header Background",
+        "file": "header-background-40efe3.png",
+        "size": "2786x1486", 
+        "usage": "Header section background",
+        "cropped": true
+      }
+    ]
+  },
+  "figmaData": {
+    "originalUrl": "https://www.figma.com/design/QzoQnskps4jOngxyOMUByD/SMB?node-id=687-53585",
+    "extractedAt": "2025-09-03T07:39:00Z",
+    "totalNodes": 200,
+    "totalAssets": 24,
+    "componentCount": 6
+  }
+}

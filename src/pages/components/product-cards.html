@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMB - Карточки товаров. Все варианты карточек продуктов на основе дизайна Figma.">
+    <title>Карточки товаров - SMB</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/smb-logo.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <a href="../index.html" class="header__nav-link">Главная</a>
+                <a href="../catalog/index.html" class="header__nav-link">Каталог</a>
+                <a href="../info/about.html" class="header__nav-link">О бренде</a>
+            </nav>
+
+            <div class="header__logo">
+                <a href="../index.html" aria-label="SMB Home">
+                    <img src="../assets/icons/smb-logo.svg" alt="SMB Logo" width="63" height="36">
+                </a>
+            </div>
+
+            <div class="header__actions">
+                <button class="header__action-btn" type="button" aria-label="Search products">
+                    <img src="../assets/icons/search-icon.svg" alt="" width="18" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="View favorites">
+                    <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="Shopping cart">
+                    <img src="../assets/icons/shopping-bag-icon.svg" alt="" width="16" height="20">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="User account">
+                    <img src="../assets/icons/person-icon.svg" alt="" width="20" height="18">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-cards-showcase">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="showcase-header">
+                <h1 class="showcase-title">Карточки товаров</h1>
+                <p class="showcase-subtitle">
+                    Полный набор карточек товаров на основе точного дизайна из Figma
+                </p>
+            </div>
+
+            <!-- Basic Product Cards Section -->
+            <section class="showcase-section">
+                <h2 class="showcase-section-title">Основные карточки товаров</h2>
+                <div class="product-grid">
+                    <!-- Basic MINI ROSA Card -->
+                    <article class="product-card" data-product-id="mini-rosa-basic">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--mini-rosa" 
+                                role="img"
+                                aria-label="MINI ROSA product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="mini-rosa-basic"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="../catalog/product.html?id=mini-rosa-basic">MINI ROSA</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">29 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                                <button class="product-card__color color--tan" type="button" aria-label="Select tan color" data-color="tan"></button>
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--light-gray" type="button" aria-label="Select light gray color" data-color="light-gray"></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MOSS Card (Favorited) -->
+                    <article class="product-card" data-product-id="moss-favorited">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--moss" 
+                                role="img"
+                                aria-label="Moss product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite product-card__favorite--active" 
+                                type="button" 
+                                aria-label="Remove from favorites"
+                                data-product-id="moss-favorited"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-filled.svg" alt="" width="24" height="22">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="../catalog/product.html?id=moss-favorited">MOSS</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">35 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CLASSIC BAG Card -->
+                    <article class="product-card" data-product-id="classic-bag">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--classic" 
+                                role="img"
+                                aria-label="Classic Bag product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="classic-bag"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="../catalog/product.html?id=classic-bag">CLASSIC BAG</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">42 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW Product Card with Sale Price -->
+                    <article class="product-card product-card--sale" data-product-id="mini-rosa-sale">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--mini-rosa" 
+                                role="img"
+                                aria-label="MINI ROSA product image"
+                            ></div>
+                            
+                            <div class="product-card__badge" role="text">NEW</div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="mini-rosa-sale"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="../catalog/product.html?id=mini-rosa-sale">MINI ROSA</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-original">29 000 ₽</span>
+                                <span class="product-card__price-current">21 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                                <button class="product-card__color color--tan" type="button" aria-label="Select tan color" data-color="tan"></button>
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--light-gray" type="button" aria-label="Select light gray color" data-color="light-gray"></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Special States Section -->
+            <section class="showcase-section">
+                <h2 class="showcase-section-title">Специальные состояния</h2>
+                <div class="product-grid">
+                    <!-- Loading State Card -->
+                    <article class="product-card product-card--loading" data-product-id="loading">
+                        <div class="product-card__image-container">
+                            <div class="product-card__image" role="img" aria-label="Loading product"></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                disabled
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <span class="skeleton-text">Загрузка...</span>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current skeleton-text">--- ---</span>
+                            </div>
+
+                            <div class="product-card__colors">
+                                <div class="skeleton-color"></div>
+                                <div class="skeleton-color"></div>
+                                <div class="skeleton-color"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Unavailable State Card -->
+                    <article class="product-card product-card--unavailable" data-product-id="unavailable">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--mini-rosa" 
+                                role="img"
+                                aria-label="Unavailable product"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                disabled
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <span>MINI ROSA</span>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">29 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors">
+                                <button class="product-card__color color--brown" disabled></button>
+                                <button class="product-card__color color--tan" disabled></button>
+                                <button class="product-card__color color--black" disabled></button>
+                                <button class="product-card__color color--light-gray" disabled></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Interactive Demo Section -->
+            <section class="showcase-section">
+                <h2 class="showcase-section-title">Интерактивная демонстрация</h2>
+                <div class="interactive-controls">
+                    <button class="btn btn--secondary btn--sm" onclick="toggleFavorites()">
+                        Переключить избранное
+                    </button>
+                    <button class="btn btn--secondary btn--sm" onclick="simulateLoading()">
+                        Показать загрузку
+                    </button>
+                    <button class="btn btn--secondary btn--sm" onclick="toggleAvailability()">
+                        Переключить доступность
+                    </button>
+                </div>
+                
+                <div class="product-grid">
+                    <!-- Interactive Card -->
+                    <article class="product-card" data-product-id="interactive-demo" id="demo-card">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--moss" 
+                                role="img"
+                                aria-label="Interactive demo product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="interactive-demo"
+                                data-action="toggle-favorite"
+                                onclick="toggleFavorite(this)"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="#demo">INTERACTIVE DEMO</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">35 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" onclick="selectColor(this, 'brown')"></button>
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" onclick="selectColor(this, 'black')"></button>
+                                <button class="product-card__color color--tan" type="button" aria-label="Select tan color" onclick="selectColor(this, 'tan')"></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../utils/main.js" defer></script>
+    <script src="product-cards-demo.js" defer></script>
+</body>
+</html>
+
+<style>
+/* ============================================================================
+   PRODUCT CARDS SHOWCASE STYLES
+   ============================================================================ */
+
+.product-cards-showcase {
+    background-color: var(--white);
+    min-height: calc(100vh - var(--header-height));
+    padding: var(--space-8) 0;
+}
+
+.showcase-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.showcase-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: var(--space-4);
+}
+
+.showcase-subtitle {
+    font-size: var(--text-lg);
+    color: var(--gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: var(--leading-relaxed);
+}
+
+.showcase-section {
+    margin-bottom: var(--space-16);
+}
+
+.showcase-section-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: var(--space-8);
+    text-align: center;
+}
+
+.interactive-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    flex-wrap: wrap;
+}
+
+/* Product Grid Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 968px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Enhanced Product Card Styles */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card__image-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Slightly smaller for showcase */
+    background-color: var(--gray-100);
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Product Image Backgrounds */
+.product-image--mini-rosa {
+    background-image: url('../assets/images/product-1.png');
+}
+
+.product-image--moss {
+    background-image: url('../assets/images/product-moss-15277b.png');
+}
+
+.product-image--classic {
+    background-image: url('../assets/images/product-3.png');
+}
+
+/* Badge Styling */
+.product-card__badge {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background-color: #181B1D;
+    color: var(--green);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    z-index: 2;
+    letter-spacing: 0.5px;
+}
+
+/* Favorite Button */
+.product-card__favorite {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.product-card__favorite:hover {
+    transform: scale(1.1);
+    background: var(--white);
+}
+
+.product-card__favorite--active {
+    background: var(--green);
+}
+
+.product-card__favorite--active:hover {
+    background: var(--green-dark);
+}
+
+/* Product Info */
+.product-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.product-card__title {
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    color: var(--black);
+    line-height: var(--leading-normal);
+    margin: 0;
+}
+
+.product-card__title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.product-card__title a:hover {
+    color: var(--green-dark);
+}
+
+/* Price Styling */
+.product-card__price {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.product-card__price-original {
+    font-size: var(--text-base);
+    color: var(--gray-400);
+    text-decoration: line-through;
+}
+
+.product-card__price-current {
+    font-size: var(--text-base);
+    color: var(--gray-muted);
+    font-weight: var(--font-normal);
+}
+
+.product-card--sale .product-card__price-current {
+    color: var(--black);
+    font-weight: var(--font-medium);
+}
+
+/* Color Variants */
+.product-card__colors {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.product-card__color {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+    position: relative;
+}
+
+.product-card__color:hover {
+    transform: scale(1.5);
+}
+
+.product-card__color--selected {
+    transform: scale(1.3);
+}
+
+.product-card__color--selected::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 2px solid var(--green);
+    border-radius: 50%;
+}
+
+.product-card__color:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Color Variants */
+.color--brown { background-color: #5E4F37; }
+.color--tan { background-color: #A86738; }
+.color--black { background-color: #000000; }
+.color--light-gray { background-color: #DEDEDE; }
+
+/* Loading State */
+.product-card--loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.product-card--loading .product-card__image {
+    background: var(--gray-100);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card--loading .product-card__image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.skeleton-text {
+    background: var(--gray-100);
+    color: transparent;
+    border-radius: 4px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-color {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray-100);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Unavailable State */
+.product-card--unavailable {
+    opacity: 0.5;
+}
+
+.product-card--unavailable .product-card__image::after {
+    content: 'Временно недоступно';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    color: var(--gray-600);
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-cards-showcase {
+        padding: var(--space-4) 0;
+    }
+    
+    .showcase-header {
+        margin-bottom: var(--space-8);
+    }
+    
+    .showcase-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .product-card__image-container {
+        height: 300px;
+    }
+    
+    .interactive-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .product-card,
+    .product-card__favorite,
+    .product-card__color {
+        transition: none;
+    }
+    
+    .product-card:hover {
+        transform: none;
+    }
+    
+    .product-card--loading .product-card__image::before,
+    .skeleton-text,
+    .skeleton-color {
+        animation: none;
+    }
+}
+
+/* Focus States */
+.product-card__favorite:focus,
+.product-card__color:focus {
+    outline: 2px solid var(--green-dark);
+    outline-offset: 2px;
+}
+
+.product-card__title a:focus {
+    outline: 2px solid var(--green-dark);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .product-card {
+        border: 2px solid var(--black);
+    }
+    
+    .product-card__favorite {
+        background: var(--white);
+        border: 1px solid var(--black);
+    }
+    
+    .product-card__badge {
+        border: 1px solid var(--black);
+    }
+}
+</style>

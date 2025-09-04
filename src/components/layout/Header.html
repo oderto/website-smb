@@ -1,0 +1,238 @@
+<style>
+/* Hamburger Menu Button */
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.header__hamburger-line {
+  width: 100%;
+  height: 2px;
+  background: var(--black);
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: center;
+}
+
+/* Hamburger animation when menu is open */
+.header__hamburger[aria-expanded="true"] .header__hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.header__hamburger[aria-expanded="true"] .header__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__hamburger[aria-expanded="true"] .header__hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.mobile-nav__content {
+  position: relative;
+  background: var(--white);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-xl);
+}
+
+.mobile-nav:not(.hidden) .mobile-nav__content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.mobile-nav__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: none;
+  border: none;
+  font-size: var(--text-2xl);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-nav__close:hover {
+  background-color: var(--gray-100);
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-4);
+}
+
+.mobile-nav__link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+  color: var(--black);
+  border-bottom: 1px solid var(--gray-100);
+  transition: color var(--transition-fast);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link:focus {
+  color: var(--green-dark);
+  background-color: var(--gray-50);
+  outline: none;
+}
+
+.mobile-nav__link:last-child {
+  border-bottom: none;
+}
+
+/* Mobile Navigation Drawer Variant */
+.mobile-nav--drawer {
+  justify-content: flex-start;
+}
+
+.mobile-nav--drawer .mobile-nav__content {
+  margin: 0;
+  max-width: 300px;
+  height: 100vh;
+  border-radius: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-xl);
+}
+
+.mobile-nav--drawer:not(.hidden) .mobile-nav__content {
+  transform: translateX(0);
+}
+
+.mobile-nav--drawer .mobile-nav__list {
+  padding-top: var(--space-16);
+}
+
+/* Enhanced mobile styles */
+@media (max-width: 768px) {
+  .mobile-nav__content {
+    max-width: 95vw;
+    padding: var(--space-6);
+  }
+  
+  .mobile-nav__list {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-6);
+  }
+  
+  .mobile-nav__link {
+    padding: var(--space-4) var(--space-3);
+    font-size: var(--text-base);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .mobile-nav__close {
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-xl);
+  }
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  .header__hamburger {
+    display: flex;
+  }
+  
+  .header__nav {
+    display: none;
+  }
+  
+  .header__container {
+    gap: var(--space-4);
+  }
+  
+  .header__actions {
+    gap: var(--space-4);
+  }
+}
+</style>
+
+<header class="header">
+  <div class="header__container">
+    <button class="header__hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+    </button>
+    <a href="/" class="header__logo">Logo</a>
+    <nav class="header__nav" role="navigation" aria-label="Main navigation">
+      <ul class="header__list">
+        <li><a href="#about" class="header__link">About</a></li>
+        <li><a href="#woman" class="header__link">Woman</a></li>
+        <li><a href="#man" class="header__link">Man</a></li>
+        <li><a href="#store" class="header__link">Store</a></li>
+        <li><a href="#gifts" class="header__link">Gift Cards</a></li>
+        <li><a href="#contacts" class="header__link">Contacts</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <button class="header__action" type="button" aria-label="Search">🔍</button>
+      <button class="header__action" type="button" aria-label="Cart">🛒</button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation (Hidden by default, shown on mobile menu toggle) -->
+<nav class="mobile-nav mobile-nav--drawer hidden" role="navigation" aria-label="Mobile navigation" id="mobile-nav">
+  <div class="mobile-nav__overlay"></div>
+  <div class="mobile-nav__content">
+    <button class="mobile-nav__close" type="button" aria-label="Close menu">×</button>
+    <ul class="mobile-nav__list">
+      <li><a href="#about" class="mobile-nav__link">About</a></li>
+      <li><a href="#woman" class="mobile-nav__link">Woman</a></li>
+      <li><a href="#man" class="mobile-nav__link">Man</a></li>
+      <li><a href="#store" class="mobile-nav__link">Store</a></li>
+      <li><a href="#gifts" class="mobile-nav__link">Gift Cards</a></li>
+      <li><a href="#contacts" class="mobile-nav__link">Contacts</a></li>
+    </ul>
+  </div>
+</nav>

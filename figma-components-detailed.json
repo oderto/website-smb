@@ -1,0 +1,466 @@
+{
+  "figmaComponents": {
+    "scroll": {
+      "id": "656:51506",
+      "name": "Scroll",
+      "type": "animation",
+      "description": "Горизонтальный скроллинг баннер с текстом",
+      "props": {
+        "backgroundColor": "#C2E028",
+        "textColor": "#272727",
+        "fontSize": "10px",
+        "textTransform": "uppercase",
+        "padding": "4px 80px",
+        "gap": "30px",
+        "height": "24px",
+        "animation": "scroll-horizontal"
+      },
+      "content": [
+        "DROP MINI MOSS 2 д 12 ч 7 м",
+        "LIMIT MINI MOSS 2 д 12 ч 7 м",
+        "ДРОП GOSHA 2 д 12 ч 7 м"
+      ]
+    },
+    "header": {
+      "id": "342:26019",
+      "name": "Header",
+      "type": "navigation",
+      "description": "Главная навигация сайта",
+      "props": {
+        "height": "69px",
+        "padding": "16px",
+        "borderBottom": "1px solid rgba(0, 0, 0, 0.05)",
+        "backgroundColor": "transparent",
+        "backgroundImage": "header-background-40efe3.png"
+      },
+      "elements": {
+        "navigation": {
+          "items": ["About", "Woman", "Man"],
+          "style": {
+            "fontSize": "14px",
+            "textTransform": "uppercase",
+            "gap": "40px",
+            "color": "#272727"
+          }
+        },
+        "logo": {
+          "file": "smb-logo.svg",
+          "size": "63x36",
+          "position": "center"
+        },
+        "actions": {
+          "items": [
+            {
+              "name": "search",
+              "icon": "search-icon.svg",
+              "size": "18x18"
+            },
+            {
+              "name": "favorite",
+              "icon": "favorite-icon.svg",
+              "size": "20x18"
+            },
+            {
+              "name": "cart",
+              "icon": "shopping-bag-icon.svg",
+              "size": "16x20"
+            },
+            {
+              "name": "profile",
+              "icon": "person-icon.svg",
+              "size": "20x18"
+            }
+          ],
+          "gap": "32px"
+        }
+      }
+    },
+    "productCard": {
+      "id": "342:24163",
+      "name": "Product",
+      "type": "card",
+      "description": "Карточка товара с изображением и информацией",
+      "variants": {
+        "default": {
+          "id": "342:24163",
+          "badge": null
+        },
+        "new": {
+          "id": "342:24231",
+          "badge": {
+            "text": "NEW",
+            "backgroundColor": "#181B1D",
+            "color": "#91BE17",
+            "fontSize": "16px",
+            "fontFamily": "Libre Franklin",
+            "padding": "10px",
+            "position": "top-left"
+          }
+        }
+      },
+      "props": {
+        "width": "100%",
+        "height": "auto",
+        "gap": "16px"
+      },
+      "elements": {
+        "image": {
+          "height": "512px",
+          "backgroundSize": "cover",
+          "backgroundPosition": "center",
+          "backgroundColor": "#F5F5F5",
+          "position": "relative"
+        },
+        "favoriteButton": {
+          "position": "absolute",
+          "top": "8px",
+          "right": "8px",
+          "size": "32x32",
+          "background": "none",
+          "border": "none",
+          "states": {
+            "default": {
+              "icon": "favorite-icon.svg",
+              "color": "#272727"
+            },
+            "active": {
+              "icon": "favorite-filled.svg",
+              "color": "#91BE17"
+            }
+          }
+        },
+        "info": {
+          "gap": "8px",
+          "elements": {
+            "title": {
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "textTransform": "uppercase",
+              "color": "#272727",
+              "lineHeight": "1.3em"
+            },
+            "price": {
+              "layout": "horizontal",
+              "gap": "16px",
+              "originalPrice": {
+                "fontSize": "14px",
+                "color": "#CACACA",
+                "textDecoration": "line-through"
+              },
+              "currentPrice": {
+                "fontSize": "14px",
+                "color": "rgba(39, 39, 39, 0.6)"
+              }
+            },
+            "colors": {
+              "layout": "horizontal",
+              "gap": "8px",
+              "colorDots": {
+                "size": "8x8",
+                "borderRadius": "50%",
+                "colors": ["#5E4F37", "#A86738", "#000000", "#DEDEDE"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "button": {
+      "id": "380:14722",
+      "name": "Button",
+      "type": "interactive",
+      "description": "Универсальная кнопка с различными вариантами",
+      "variants": {
+        "primary": {
+          "id": "380:14722",
+          "size": "L",
+          "backgroundColor": "#FFFFFF",
+          "color": "#91BE17",
+          "border": "1px solid #91BE17",
+          "width": "260px",
+          "height": "42px"
+        },
+        "primaryGreen": {
+          "id": "619:26610",
+          "size": "L",
+          "backgroundColor": "#91BE17",
+          "color": "#F0F0F0",
+          "border": "none",
+          "width": "260px",
+          "height": "42px"
+        },
+        "secondaryGreen": {
+          "id": "1021:48311",
+          "size": "M",
+          "backgroundColor": "transparent",
+          "color": "#91BE17",
+          "border": "1px solid #91BE17",
+          "height": "38px",
+          "width": "auto"
+        }
+      },
+      "commonProps": {
+        "borderRadius": "100px",
+        "padding": "8px 16px",
+        "fontSize": "14px",
+        "fontFamily": "Helvetica Neue",
+        "textTransform": "uppercase",
+        "fontWeight": "400",
+        "cursor": "pointer",
+        "transition": "0.3s ease"
+      }
+    },
+    "footer": {
+      "id": "342:29533",
+      "name": "Footer",
+      "type": "layout",
+      "description": "Подвал сайта с полной информацией",
+      "props": {
+        "width": "1440px",
+        "backgroundColor": "#FFFFFF",
+        "padding": "120px 16px 200px"
+      },
+      "sections": {
+        "mainNavigation": {
+          "backgroundColor": "#FAFAFA",
+          "padding": "16px",
+          "layout": "horizontal",
+          "gap": "116px",
+          "items": ["Store", "О бренде", "Bag Stage", "Подарочные карты"],
+          "style": {
+            "fontSize": "14px",
+            "color": "#000000",
+            "textTransform": "uppercase"
+          }
+        },
+        "content": {
+          "layout": "horizontal",
+          "gap": "124px",
+          "columns": [
+            {
+              "title": "Контакты",
+              "items": [
+                "8(800)000-00-00",
+                "INFO@SMB.RU",
+                "WHATSAPP",
+                "TELEGRAM"
+              ],
+              "style": {
+                "titleColor": "#000000",
+                "itemColor": "#777777",
+                "fontSize": "14px",
+                "gap": "16px"
+              }
+            },
+            {
+              "title": "ПЛАТЕЖНЫЕ СИСТЕМЫ",
+              "items": [
+                {
+                  "type": "image",
+                  "src": "mir-logo.svg",
+                  "alt": "МИР"
+                },
+                {
+                  "type": "image",
+                  "src": "visa-logo.svg", 
+                  "alt": "Visa"
+                },
+                {
+                  "type": "image",
+                  "src": "mastercard-logo.svg",
+                  "alt": "Mastercard"
+                }
+              ]
+            },
+            {
+              "title": "Покупателям",
+              "items": [
+                "Доставка",
+                "Оплата", 
+                "Возврат",
+                "Программа лояльности",
+                "Правила приобретения и применения подарочных карт"
+              ]
+            },
+            {
+              "title": "Безопасность данных",
+              "items": [
+                "Политика обработки персональных данных",
+                "Согласие на обработку персональных данных",
+                "Публичная оферта",
+                "Пользовательское соглашение", 
+                "Согласие на получение рекламной рассылки",
+                "Согласие на обработку персональных данных, собираемых метрическими системами",
+                "Cookies"
+              ]
+            }
+          ]
+        },
+        "legal": {
+          "items": [
+            "ИП «ФАМИЛИЯ ИМЯ»",
+            "ИНН 00000000",
+            "ОГРНИП 000000000000"
+          ],
+          "style": {
+            "fontSize": "12px",
+            "color": "#777777"
+          }
+        },
+        "copyright": {
+          "layout": "horizontal",
+          "justifyContent": "space-between",
+          "padding": "10px 16px",
+          "items": [
+            "© SMB 2025",
+            "Разработано Effect.Web"
+          ],
+          "style": {
+            "fontSize": "12px",
+            "color": "#777777"
+          }
+        }
+      }
+    }
+  },
+  "sections": {
+    "newCollection": {
+      "title": "new collection",
+      "type": "productGrid",
+      "layout": {
+        "columns": 4,
+        "gap": "4px",
+        "padding": "16px 16px 0px"
+      },
+      "products": [
+        {
+          "name": "MINI ROSA",
+          "price": "29 000 ₽",
+          "image": "product-1.png",
+          "colors": ["#5E4F37", "#A86738", "#000000", "#DEDEDE"],
+          "favorite": true
+        }
+      ]
+    },
+    "categorySection": {
+      "type": "splitLayout",
+      "layout": {
+        "columns": 2,
+        "gap": "4px"
+      },
+      "sections": [
+        {
+          "title": "Woman",
+          "image": "woman-section.png",
+          "backgroundColor": "#000000",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "title": "Man",
+          "image": "man-section-48751d.png",
+          "backgroundColor": "#272727",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    "featuredProduct": {
+      "title": "MINI MOSS",
+      "type": "hero",
+      "backgroundImage": "main-product-image.png",
+      "backgroundColor": "#FAFAFA",
+      "overlayEffects": ["blur(40px)"],
+      "textPosition": "bottom-center"
+    },
+    "instagramGallery": {
+      "type": "socialGallery",
+      "layout": {
+        "columns": 4,
+        "gap": "4px"
+      },
+      "posts": [
+        {
+          "image": "instagram-post-1.png",
+          "username": "@nikname_inst"
+        },
+        {
+          "image": "instagram-post-2.png",
+          "username": "@nikname_inst"
+        },
+        {
+          "image": "instagram-post-3.png",
+          "username": "@nikname_inst",
+          "text": "Слишком смело для всех, идеально для тебя"
+        },
+        {
+          "image": "instagram-post-4-2f8fe1.png",
+          "username": "@nikname_inst"
+        }
+      ]
+    },
+    "heroCallToAction": {
+      "title": "SMB bag - твой лучший друг в большом городе",
+      "type": "cta",
+      "backgroundImage": "hero-background-686e27.png",
+      "button": {
+        "text": "О бренде",
+        "variant": "primary",
+        "size": "L"
+      },
+      "layout": {
+        "width": "1440px",
+        "height": "720px",
+        "padding": "80px",
+        "justifyContent": "flex-end",
+        "gap": "24px"
+      }
+    },
+    "giftCardSection": {
+      "title": "Подбери подарочную карту для себя или друга",
+      "type": "cta",
+      "backgroundImage": "gift-card-background.png",
+      "button": {
+        "text": "Подарить карту",
+        "variant": "primaryGreen",
+        "size": "L"
+      }
+    },
+    "newsletter": {
+      "title": "SMB secret club",
+      "description": "Cекретные скидки, еженедельные новости, письма от основателя бренда",
+      "type": "subscription",
+      "button": {
+        "text": "подписаться",
+        "variant": "secondaryGreen",
+        "size": "M"
+      },
+      "layout": {
+        "padding": "160px 16px",
+        "gap": "40px",
+        "textAlign": "center"
+      }
+    }
+  },
+  "responsiveBreakpoints": {
+    "desktop": "1440px",
+    "tablet": "768px",
+    "mobile": "480px"
+  },
+  "animations": {
+    "scrollBanner": {
+      "type": "infinite-scroll",
+      "direction": "horizontal",
+      "speed": "30s"
+    },
+    "productHover": {
+      "type": "lift",
+      "transform": "translateY(-4px)",
+      "transition": "0.3s ease"
+    },
+    "buttonHover": {
+      "type": "lift",
+      "transform": "translateY(-2px)",
+      "opacity": "0.8",
+      "transition": "0.2s ease"
+    }
+  }
+}

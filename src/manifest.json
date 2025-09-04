@@ -1,0 +1,106 @@
+{
+  "name": "SMB Designer Bags",
+  "short_name": "SMB",
+  "description": "Интернет-магазин дизайнерских сумок SMB",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#C2E028",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "ru",
+  "categories": ["shopping", "fashion", "lifestyle"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Новая коллекция",
+      "short_name": "NEW",
+      "description": "Посмотреть новую коллекцию",
+      "url": "/#new-collection",
+      "icons": [{ "src": "assets/icons/shortcut-new.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Женские сумки",
+      "short_name": "Woman",
+      "description": "Коллекция для женщин",
+      "url": "/#woman",
+      "icons": [{ "src": "assets/icons/shortcut-woman.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Мужские сумки",
+      "short_name": "Man",
+      "description": "Коллекция для мужчин",
+      "url": "/#man",
+      "icons": [{ "src": "assets/icons/shortcut-man.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Избранное",
+      "short_name": "Favorites",
+      "description": "Просмотр избранных товаров",
+      "url": "/favorites",
+      "icons": [{ "src": "assets/icons/shortcut-favorites.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://smb.ru/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}

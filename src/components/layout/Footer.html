@@ -1,0 +1,289 @@
+<!-- ============================================================================
+     SMB Website - Footer Component
+     Complete footer with navigation, contacts, legal info
+     ============================================================================ -->
+
+<footer class="footer" role="contentinfo">
+  <!-- Main Navigation Bar -->
+  <nav class="footer__nav" role="navigation" aria-label="Footer navigation">
+    <a href="index.html" class="footer__nav-link">Store</a>
+    <a href="info/about.html" class="footer__nav-link">О бренде</a>
+    <a href="bag-stage.html" class="footer__nav-link">Bag Stage</a>
+    <a href="gift-cards.html" class="footer__nav-link">Подарочные карты</a>
+  </nav>
+
+  <!-- Main Footer Content -->
+  <div class="footer__content">
+    <!-- Contacts Section -->
+    <div class="footer__section">
+      <h3 class="footer__section-title">Контакты</h3>
+      <div class="footer__section-content">
+        <a href="tel:+78000000000" class="footer__link">8(800)000-00-00</a>
+        <a href="mailto:info@smb.ru" class="footer__link">INFO@SMB.RU</a>
+        <a href="#" class="footer__link">WHATSAPP</a>
+        <a href="#" class="footer__link">TELEGRAM</a>
+      </div>
+      
+      <!-- Legal Information -->
+      <div class="footer__legal">
+        <span class="footer__legal-text">ИП «ФАМИЛИЯ ИМЯ»</span>
+        <span class="footer__legal-text">ИНН 00000000</span>
+        <span class="footer__legal-text">ОГРНИП 000000000000</span>
+      </div>
+    </div>
+
+    <!-- Payment Systems -->
+    <div class="footer__section">
+      <h3 class="footer__section-title">Платежные системы</h3>
+      <div class="footer__payment-logos">
+        <img 
+          src="../assets/icons/mir-logo.svg" 
+          alt="МИР" 
+          width="54" 
+          height="15"
+          loading="lazy"
+        >
+        <img 
+          src="../assets/icons/visa-logo.svg" 
+          alt="Visa" 
+          width="49" 
+          height="15"
+          loading="lazy"
+        >
+        <img 
+          src="../assets/icons/mastercard-logo.svg" 
+          alt="Mastercard" 
+          width="37" 
+          height="23"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+    <!-- Customer Information -->
+    <div class="footer__section">
+      <h3 class="footer__section-title">Покупателям</h3>
+      <div class="footer__section-content">
+        <a href="delivery.html" class="footer__link">Доставка</a>
+        <a href="payment.html" class="footer__link">Оплата</a>
+        <a href="returns.html" class="footer__link">Возврат</a>
+        <a href="loyalty.html" class="footer__link">Программа лояльности</a>
+        <a href="gift-card-terms.html" class="footer__link">
+          Правила приобретения и применения подарочных карт
+        </a>
+      </div>
+    </div>
+
+    <!-- Privacy & Legal -->
+    <div class="footer__section">
+      <h3 class="footer__section-title">Безопасность данных</h3>
+      <div class="footer__section-content">
+        <a href="privacy-policy.html" class="footer__link">
+          Политика обработки персональных данных
+        </a>
+        <a href="privacy-consent.html" class="footer__link">
+          Согласие на обработку персональных данных
+        </a>
+        <a href="public-offer.html" class="footer__link">
+          Публичная оферта
+        </a>
+        <a href="user-agreement.html" class="footer__link">
+          Пользовательское соглашение
+        </a>
+        <a href="marketing-consent.html" class="footer__link">
+          Согласие на получение рекламной рассылки
+        </a>
+        <a href="metrics-consent.html" class="footer__link">
+          Согласие на обработку персональных данных, собираемых метрическими системами
+        </a>
+        <a href="cookies.html" class="footer__link">
+          Cookies
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer__bottom">
+    <span class="footer__bottom-text">© SMB 2025</span>
+    <a href="https://effect.web" class="footer__bottom-text" target="_blank" rel="noopener">
+      Разработано Effect.Web
+    </a>
+  </div>
+</footer>
+
+<style>
+/* Additional Footer Styles */
+.footer__link {
+  position: relative;
+  display: inline-block;
+}
+
+.footer__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--green-dark);
+  transition: width var(--transition-fast);
+}
+
+.footer__link:hover::after {
+  width: 100%;
+}
+
+.footer__payment-logos img {
+  transition: transform var(--transition-fast);
+}
+
+.footer__payment-logos img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer__nav {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+    padding: var(--space-4) var(--space-2);
+  }
+  
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    padding: var(--space-16) var(--space-4) var(--space-24);
+  }
+  
+  .footer__section {
+    text-align: center;
+  }
+  
+  .footer__section-title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+  }
+  
+  .footer__section-content {
+    gap: var(--space-3);
+  }
+  
+  .footer__payment-logos {
+    justify-content: center;
+  }
+  
+  .footer__legal {
+    align-items: center;
+  }
+  
+  .footer__legal-text {
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__nav {
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-1);
+  }
+  
+  .footer__nav-link {
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-1);
+  }
+  
+  .footer__content {
+    padding: var(--space-12) var(--space-3) var(--space-20);
+    gap: var(--space-8);
+  }
+  
+  .footer__section {
+    gap: var(--space-6);
+  }
+  
+  .footer__section-title {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-3);
+  }
+  
+  .footer__section-content {
+    gap: var(--space-2);
+  }
+  
+  .footer__link {
+    font-size: var(--text-sm);
+    padding: var(--space-1) 0;
+  }
+  
+  .footer__payment-logos {
+    gap: var(--space-4);
+    justify-content: center;
+  }
+  
+  .footer__payment-logos img {
+    max-width: 40px;
+    height: auto;
+  }
+  
+  .footer__legal {
+    gap: var(--space-1);
+  }
+  
+  .footer__legal-text {
+    font-size: 10px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .footer__nav,
+  .footer__payment-logos {
+    display: none;
+  }
+  
+  .footer__content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+  
+  .footer__link {
+    color: var(--black) !important;
+    text-decoration: underline;
+  }
+}
+
+/* Dark Mode Support (if implemented) */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: var(--gray-700);
+    color: var(--white);
+  }
+  
+  .footer__nav {
+    background-color: var(--gray-600);
+  }
+  
+  .footer__nav-link,
+  .footer__section-title {
+    color: var(--white);
+  }
+  
+  .footer__link {
+    color: var(--gray-300);
+  }
+  
+  .footer__link:hover {
+    color: var(--white);
+  }
+  
+  .footer__bottom {
+    border-top-color: var(--gray-600);
+  }
+  
+  .footer__bottom-text {
+    color: var(--gray-400);
+  }
+}
+</style>

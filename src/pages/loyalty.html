@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMB - Программа лояльности. Преимущества и условия участия.">
+    <title>Программа лояльности - SMB</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/smb-logo.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="header__nav-link">Главная</a>
+                <a href="catalog/index.html" class="header__nav-link">Каталог</a>
+                <a href="info/about.html" class="header__nav-link">О бренде</a>
+            </nav>
+
+            <div class="header__logo">
+                <a href="index.html" aria-label="SMB Home">
+                    <img src="assets/icons/smb-logo.svg" alt="SMB Logo" width="63" height="36">
+                </a>
+            </div>
+
+            <div class="header__actions">
+                <button class="header__action-btn" type="button" aria-label="Search products">
+                    <img src="assets/icons/search-icon.svg" alt="" width="18" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="View favorites">
+                    <img src="assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="Shopping cart">
+                    <img src="assets/icons/shopping-bag-icon.svg" alt="" width="16" height="20">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="User account">
+                    <img src="assets/icons/person-icon.svg" alt="" width="20" height="18">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Хлебные крошки">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="index.html" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current">
+                        <span class="breadcrumb__text">Программа лояльности</span>
+                    </li>
+                </ol>
+            </nav>
+
+            <!-- Content -->
+            <article class="content-article">
+                <header class="content-header">
+                    <h1 class="content-title">Программа лояльности</h1>
+                </header>
+
+                <div class="content-body">
+                    <section class="content-section">
+                        <h2 class="content-section__title">Преимущества участия</h2>
+                        <div class="content-section__content">
+                            <p>Станьте участником нашей программы лояльности и получайте привилегии при каждом заказе:</p>
+                            
+                            <ul class="content-list">
+                                <li><strong>Кэшбэк 5%</strong> - Получайте 5% от стоимости каждого заказа на бонусный счет</li>
+                                <li><strong>Персональные скидки</strong> - Скидки до 20% на распродажах и специальные предложения</li>
+                                <li><strong>День рождения</strong> - Подарок на день рождения и в годовщину регистрации</li>
+                                <li><strong>Бесплатная доставка</strong> - При заказе от 3000 ₽</li>
+                                <li><strong>Приоритетный сервис</strong> - Быстрая обработка заказов и консультации</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="content-section">
+                        <h2 class="content-section__title">Уровни программы</h2>
+                        <div class="content-section__content">
+                            <div class="loyalty-tiers">
+                                <div class="loyalty-tier">
+                                    <h3 class="loyalty-tier__title">Bronze</h3>
+                                    <p class="loyalty-tier__description">Начальный уровень для новых участников</p>
+                                    <ul class="loyalty-tier__benefits">
+                                        <li>Кэшбэк 3%</li>
+                                        <li>Доставка от 5000 ₽</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="loyalty-tier">
+                                    <h3 class="loyalty-tier__title">Silver</h3>
+                                    <p class="loyalty-tier__description">Для участников с покупками от 20 000 ₽</p>
+                                    <ul class="loyalty-tier__benefits">
+                                        <li>Кэшбэк 5%</li>
+                                        <li>Доставка от 3000 ₽</li>
+                                        <li>Персональные скидки 5%</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="loyalty-tier">
+                                    <h3 class="loyalty-tier__title">Gold</h3>
+                                    <p class="loyalty-tier__description">Для участников с покупками от 50 000 ₽</p>
+                                    <ul class="loyalty-tier__benefits">
+                                        <li>Кэшбэк 7%</li>
+                                        <li>Бесплатная доставка</li>
+                                        <li>Персональные скидки 10%</li>
+                                        <li>Приоритетная обработка заказов</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="loyalty-tier">
+                                    <h3 class="loyalty-tier__title">Platinum</h3>
+                                    <p class="loyalty-tier__description">Для участников с покупками от 100 000 ₽</p>
+                                    <ul class="loyalty-tier__benefits">
+                                        <li>Кэшбэк 10%</li>
+                                        <li>Бесплатная доставка</li>
+                                        <li>Персональные скидки 15%</li>
+                                        <li>Приоритетная обработка заказов</li>
+                                        <li>Персональный менеджер</li>
+                                        <li>Эксклюзивные предложения</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="content-section">
+                        <h2 class="content-section__title">Как принять участие</h2>
+                        <div class="content-section__content">
+                            <ol class="content-ordered-list">
+                                <li><strong>Зарегистрируйтесь</strong> - Создайте аккаунт на сайте или в мобильном приложении</li>
+                                <li><strong>Совершите покупку</strong> - Каждая покупка автоматически учитывается в программе</li>
+                                <li><strong>Накапливайте баллы</strong> - Получайте баллы за каждую покупку</li>
+                                <li><strong>Повышайте уровень</strong> - Чем больше покупок, тем выше уровень и больше привилегий</li>
+                            </ol>
+                            
+                            <p class="content-note">Участие в программе лояльности абсолютно бесплатно. Баллы не имеют срока действия и могут быть использованы для оплаты любых товаров в нашем магазине.</p>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__content">
+                <!-- Navigation -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Навигация</h3>
+                    <div class="footer__section-content">
+                        <a href="index.html" class="footer__nav-link">Главная</a>
+                        <a href="catalog/index.html" class="footer__nav-link">Каталог</a>
+                        <a href="info/about.html" class="footer__nav-link">О бренде</a>
+                    </div>
+                </div>
+
+                <!-- Customer Info -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Покупателям</h3>
+                    <div class="footer__section-content">
+                        <a href="delivery.html" class="footer__link">Доставка</a>
+                        <a href="payment.html" class="footer__link">Оплата</a>
+                        <a href="returns.html" class="footer__link">Возврат</a>
+                        <a href="loyalty.html" class="footer__link">Программа лояльности</a>
+                    </div>
+                </div>
+
+                <!-- Legal -->
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Безопасность данных</h3>
+                    <div class="footer__section-content">
+                        <a href="privacy-policy.html" class="footer__link">Политика обработки персональных данных</a>
+                        <a href="privacy-consent.html" class="footer__link">Согласие на обработку персональных данных</a>
+                        <a href="public-offer.html" class="footer__link">Публичная оферта</a>
+                        <a href="user-agreement.html" class="footer__link">Пользовательское соглашение</a>
+                        <a href="marketing-consent.html" class="footer__link">Согласие на получение рекламной рассылки</a>
+                        <a href="metrics-consent.html" class="footer__link">Согласие на обработку персональных данных, собираемых метрическими системами</a>
+                        <a href="cookies.html" class="footer__link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <span class="footer__bottom-text">© SMB 2025</span>
+                <a href="https://effect.web" class="footer__bottom-text" target="_blank" rel="noopener">
+                    Разработано Effect.Web
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="utils/main.js" defer></script>
+</body>
+</html>
+
+<style>
+/* Content Page Styles */
+.content-page {
+    background-color: var(--white);
+    min-height: calc(100vh - var(--header-height));
+    padding: var(--space-8) 0;
+}
+
+.content-article {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.content-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: var(--space-4);
+}
+
+.content-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+}
+
+.content-section {
+    padding: var(--space-8);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--green);
+}
+
+.content-section__title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+    color: var(--black);
+    margin-bottom: var(--space-6);
+}
+
+.content-section__content {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--gray-700);
+}
+
+.content-section__content p {
+    margin-bottom: var(--space-4);
+}
+
+.content-section__content p:last-child {
+    margin-bottom: 0;
+}
+
+.content-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.content-list li {
+    position: relative;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-2);
+}
+
+.content-list li::before {
+    content: '•';
+    color: var(--green);
+    font-weight: var(--font-medium);
+    position: absolute;
+    left: var(--space-2);
+}
+
+.content-ordered-list {
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+}
+
+.content-ordered-list li {
+    margin-bottom: var(--space-2);
+}
+
+.content-ordered-list li strong {
+    color: var(--black);
+}
+
+.content-note {
+    background: var(--green-light);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-4);
+    font-style: italic;
+}
+
+/* Loyalty Tiers */
+.loyalty-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+}
+
+.loyalty-tier {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+}
+
+.loyalty-tier__title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    color: var(--black);
+    margin-bottom: var(--space-2);
+    text-align: center;
+}
+
+.loyalty-tier__description {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    text-align: center;
+    margin-bottom: var(--space-4);
+}
+
+.loyalty-tier__benefits {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.loyalty-tier__benefits li {
+    position: relative;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-2);
+    font-size: var(--text-sm);
+}
+
+.loyalty-tier__benefits li::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: var(--font-medium);
+    position: absolute;
+    left: var(--space-2);
+}
+
+.loyalty-tier:nth-child(1) .loyalty-tier__title { color: #CD7F32; } /* Bronze */
+.loyalty-tier:nth-child(2) .loyalty-tier__title { color: #C0C0C0; } /* Silver */
+.loyalty-tier:nth-child(3) .loyalty-tier__title { color: #FFD700; } /* Gold */
+.loyalty-tier:nth-child(4) .loyalty-tier__title { color: #E5E4E2; } /* Platinum */
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .content-page {
+        padding: var(--space-4) 0;
+    }
+    
+    .content-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .content-section {
+        padding: var(--space-6);
+    }
+    
+    .content-section__title {
+        font-size: var(--text-xl);
+    }
+    
+    .loyalty-tiers {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

@@ -1,0 +1,231 @@
+<!-- ============================================================================
+     SMB Website - Product Card Component
+     Reusable product card with image, info, and actions
+     ============================================================================ -->
+
+<article class="product-card" data-product-id="{PRODUCT_ID}">
+  <!-- Product Image Container -->
+  <div class="product-card__image-container">
+    <!-- Product Image -->
+    <div 
+      class="product-card__image {IMAGE_CLASS}" 
+      style="background-image: url('../assets/images/placeholder.png'); /* Template: {IMAGE_FILE} */"
+      role="img"
+      aria-label="{PRODUCT_NAME} product image"
+    ></div>
+
+    <!-- NEW Badge (conditional) -->
+    {IF_NEW_BADGE}
+    <div class="product-card__badge" role="text">NEW</div>
+    {/IF_NEW_BADGE}
+
+    <!-- Favorite Button -->
+    <button 
+      class="product-card__favorite {FAVORITE_CLASS}" 
+      type="button" 
+      aria-label="{FAVORITE_ARIA_LABEL}"
+      data-product-id="{PRODUCT_ID}"
+      data-action="toggle-favorite"
+    >
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none">
+        <use href="../assets/icons/{FAVORITE_ICON}#{FAVORITE_ICON_ID}"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Product Information -->
+  <div class="product-card__info">
+    <!-- Product Title -->
+    <h3 class="product-card__title">
+      <a href="../catalog/product.html?{PRODUCT_SLUG}" class="product-card__title-link">
+        {PRODUCT_NAME}
+      </a>
+    </h3>
+
+    <!-- Price Information -->
+    <div class="product-card__price">
+      {IF_ORIGINAL_PRICE}
+      <span class="product-card__price-original" aria-label="Original price">
+        {ORIGINAL_PRICE}
+      </span>
+      {/IF_ORIGINAL_PRICE}
+      <span class="product-card__price-current" aria-label="Current price">
+        {CURRENT_PRICE}
+      </span>
+    </div>
+
+    <!-- Color Variants -->
+    <div class="product-card__colors" role="group" aria-label="Available colors">
+      {FOREACH_COLOR}
+      <button 
+        class="product-card__color {COLOR_CLASS}" 
+        type="button" 
+        aria-label="Select {COLOR_NAME} color"
+        data-color="{COLOR_VALUE}"
+        data-action="select-color"
+        style="background-color: var(--gray-300); /* Template: {COLOR_HEX} */"
+      ></button>
+      {/FOREACH_COLOR}
+    </div>
+  </div>
+</article>
+
+<!-- Example Usage with Real Data -->
+<!-- 
+<article class="product-card" data-product-id="mini-rosa-1">
+  <div class="product-card__image-container">
+    <div 
+      class="product-card__image product-image--1" 
+      role="img"
+      aria-label="MINI ROSA product image"
+    ></div>
+
+    <button 
+      class="product-card__favorite product-card__favorite--active" 
+      type="button" 
+      aria-label="Remove from favorites"
+      data-product-id="mini-rosa-1"
+      data-action="toggle-favorite"
+    >
+      <svg width="24" height="22" viewBox="0 0 24 22" fill="none">
+        <use href="../assets/icons/favorite-filled.svg#favorite-filled"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="product-card__info">
+    <h3 class="product-card__title">
+      <a href="../catalog/product.html?id=mini-rosa" class="product-card__title-link">
+        MINI ROSA
+      </a>
+    </h3>
+
+    <div class="product-card__price">
+      <span class="product-card__price-current" aria-label="Current price">
+        29 000 ₽
+      </span>
+    </div>
+
+    <div class="product-card__colors" role="group" aria-label="Available colors">
+      <button 
+        class="product-card__color color--brown" 
+        type="button" 
+        aria-label="Select brown color"
+        data-color="brown"
+        data-action="select-color"
+      ></button>
+      <button 
+        class="product-card__color color--tan" 
+        type="button" 
+        aria-label="Select tan color"
+        data-color="tan"
+        data-action="select-color"
+      ></button>
+      <button 
+        class="product-card__color color--black" 
+        type="button" 
+        aria-label="Select black color"
+        data-color="black"
+        data-action="select-color"
+      ></button>
+      <button 
+        class="product-card__color color--light-gray" 
+        type="button" 
+        aria-label="Select light gray color"
+        data-color="light-gray"
+        data-action="select-color"
+      ></button>
+    </div>
+  </div>
+</article>
+-->
+
+<style>
+/* Additional Product Card Styles */
+.product-card__title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.product-card__title-link:hover {
+  color: var(--green-dark);
+}
+
+.product-card__title-link:focus {
+  outline: 2px solid var(--green-dark);
+  outline-offset: 2px;
+}
+
+/* Product Card Loading State */
+.product-card--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.product-card--loading .product-card__image {
+  background: var(--gray-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card--loading .product-card__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Product Card States */
+.product-card--unavailable {
+  opacity: 0.5;
+}
+
+.product-card--unavailable .product-card__image::after {
+  content: 'Временно недоступно';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  color: var(--gray-600);
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .product-card {
+    transition: none;
+  }
+  
+  .product-card:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .product-card {
+    border: 2px solid var(--black);
+  }
+  
+  .product-card__favorite {
+    background: var(--white);
+    border: 1px solid var(--black);
+  }
+}
+</style>

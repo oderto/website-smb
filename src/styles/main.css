@@ -1,0 +1,285 @@
+/* ============================================================================
+   SMB Website - Main Stylesheet
+   Entry point for all styles
+   ============================================================================ */
+
+/* Import base styles */
+@import './base/globals.css';
+
+/* Import component styles */
+@import './components/components.css';
+
+/* ============================================================================
+   CUSTOM STYLES FOR SPECIFIC IMPLEMENTATIONS
+   ============================================================================ */
+
+/* Hamburger Menu Button */
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.header__hamburger-line {
+  width: 100%;
+  height: 2px;
+  background: var(--black);
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: center;
+}
+
+/* Hamburger animation when menu is open */
+.header__hamburger[aria-expanded="true"] .header__hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.header__hamburger[aria-expanded="true"] .header__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__hamburger[aria-expanded="true"] .header__hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.mobile-nav__content {
+  position: relative;
+  background: var(--white);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav:not(.hidden) .mobile-nav__content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.mobile-nav__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: none;
+  border: none;
+  font-size: var(--text-2xl);
+  cursor: pointer;
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-8);
+}
+
+.mobile-nav__link {
+  display: block;
+  padding: var(--space-3) 0;
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+  color: var(--black);
+  border-bottom: 1px solid var(--gray-100);
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav__link:hover {
+  color: var(--green-dark);
+}
+
+/* Background images for sections */
+.hero--bag {
+  background-image: url('../assets/images/hero-background-686e27.png');
+}
+
+.hero--gift-card {
+  background-image: url('../assets/images/gift-card-background.png');
+}
+
+.category--woman {
+  background-image: url('../assets/images/woman-section.png');
+}
+
+.category--man {
+  background-image: url('../assets/images/man-section-48751d.png');
+}
+
+/* Product card image backgrounds */
+.product-image--1 {
+  background-image: url('../assets/images/product-1.png');
+}
+
+.product-image--moss {
+  background-image: url('../assets/images/product-moss-15277b.png');
+}
+
+.product-image--3 {
+  background-image: url('../assets/images/product-3.png');
+}
+
+.product-image--main {
+  background-image: url('../assets/images/main-product-image.png');
+}
+
+/* Featured product section with background */
+.featured-product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  background-color: var(--gray-50);
+  background-image: url('../assets/images/main-product-image.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.featured-product::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, var(--gray-50) 30px, transparent 30px),
+    radial-gradient(circle at 75% 75%, var(--gray-50) 30px, transparent 30px);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.featured-product__title {
+  position: relative;
+  z-index: 2;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  color: var(--black);
+  text-align: center;
+}
+
+/* Instagram post backgrounds */
+.instagram-post--1 {
+  background-image: url('../assets/images/instagram-post-1.png');
+}
+
+.instagram-post--2 {
+  background-image: url('../assets/images/instagram-post-2.png');
+}
+
+.instagram-post--3 {
+  background-image: url('../assets/images/instagram-post-3.png');
+}
+
+.instagram-post--4 {
+  background-image: url('../assets/images/instagram-post-4-2f8fe1.png');
+}
+
+/* Color variants for product cards */
+.color--brown {
+  background-color: #5E4F37;
+}
+
+.color--tan {
+  background-color: #A86738;
+}
+
+.color--black {
+  background-color: #000000;
+}
+
+.color--light-gray {
+  background-color: #DEDEDE;
+}
+
+/* Animation enhancements */
+@media (prefers-reduced-motion: no-preference) {
+  .product-card {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .product-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .btn {
+    transition: all var(--transition-fast);
+  }
+  
+  .btn:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .footer,
+  .scroll-banner,
+  .btn {
+    display: none !important;
+  }
+  
+  .section--hero {
+    height: auto;
+    padding: var(--space-8);
+    background: none !important;
+  }
+  
+  .section--hero::before {
+    display: none;
+  }
+  
+  .section__title--hero {
+    color: var(--black) !important;
+  }
+  
+  .product-card {
+    break-inside: avoid;
+    margin-bottom: var(--space-4);
+  }
+  
+  .product-card__image-container {
+    height: 200px;
+  }
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  .header__hamburger {
+    display: flex;
+  }
+  
+  .header__nav {
+    display: none;
+  }
+}

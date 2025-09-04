@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMB - Личный кабинет. Управление профилем и персональными данными.">
+    <title>Личный кабинет - SMB</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/smb-logo.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <!-- Hamburger Menu Button (Visible on mobile) -->
+            <button class="header__hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+            </button>
+
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <a href="../index.html" class="header__nav-link">Главная</a>
+                <a href="../catalog/index.html" class="header__nav-link">Каталог</a>
+                <a href="../info/about.html" class="header__nav-link">О бренде</a>
+            </nav>
+
+            <div class="header__logo">
+                <a href="../index.html" aria-label="SMB Home">
+                    <img src="../assets/icons/smb-logo.svg" alt="SMB Logo" width="63" height="36">
+                </a>
+            </div>
+
+            <div class="header__actions">
+                <button class="header__action-btn" type="button" aria-label="Search products" data-action="search">
+                    <img src="../assets/icons/search-icon.svg" alt="" width="18" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="View favorites" data-action="favorites">
+                    <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="Shopping cart" data-action="cart">
+                    <img src="../assets/icons/shopping-bag-icon.svg" alt="" width="16" height="20">
+                </button>
+                <button class="header__action-btn header__action-btn--active" type="button" aria-label="User account" data-action="account">
+                    <img src="../assets/icons/person-icon.svg" alt="" width="20" height="18">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation (Hidden by default, shown on mobile menu toggle) -->
+    <nav class="mobile-nav mobile-nav--drawer hidden" role="navigation" aria-label="Mobile navigation" id="mobile-nav">
+        <div class="mobile-nav__overlay"></div>
+        <div class="mobile-nav__content">
+            <button class="mobile-nav__close" type="button" aria-label="Close menu">×</button>
+            <ul class="mobile-nav__list">
+                <li><a href="../index.html" class="mobile-nav__link">Главная</a></li>
+                <li><a href="../catalog/index.html" class="mobile-nav__link">Каталог</a></li>
+                <li><a href="../info/about.html" class="mobile-nav__link">О бренде</a></li>
+                <li><a href="../shop/cart.html" class="mobile-nav__link">Корзина</a></li>
+                <li><a href="../shop/favorites.html" class="mobile-nav__link">Избранное</a></li>
+                <li><a href="profile.html" class="mobile-nav__link">Аккаунт</a></li>
+                <li><a href="orders.html" class="mobile-nav__link">Мои заказы</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="account-layout">
+        <!-- Account Sidebar -->
+        <aside class="account-sidebar" role="navigation" aria-label="Account navigation">
+            <div class="account-sidebar__header">
+                <div class="account-sidebar__avatar">
+                    <img src="../assets/icons/person-icon.svg" alt="User Avatar" width="48" height="48">
+                </div>
+                <div class="account-sidebar__user-info">
+                    <h3 class="account-sidebar__name">Анна Иванова</h3>
+                    <p class="account-sidebar__email">anna.ivanova@email.com</p>
+                </div>
+            </div>
+
+            <nav class="account-sidebar__nav">
+                <ul class="account-sidebar__menu">
+                    <li class="account-sidebar__menu-item">
+                        <a href="profile.html" class="account-sidebar__link account-sidebar__link--active">
+                            <svg class="account-sidebar__icon" width="20" height="20" viewBox="0 0 20 20">
+                                <circle cx="10" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Моя информация
+                        </a>
+                    </li>
+                    
+                    <li class="account-sidebar__menu-item">
+                        <a href="orders.html" class="account-sidebar__link">
+                            <svg class="account-sidebar__icon" width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 10a4 4 0 0 1-8 0" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Мои заказы
+                        </a>
+                    </li>
+                    
+                    <li class="account-sidebar__menu-item">
+                        <a href="../shop/favorites.html" class="account-sidebar__link">
+                            <svg class="account-sidebar__icon" width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Избранное
+                        </a>
+                    </li>
+                    
+                    <li class="account-sidebar__menu-item">
+                        <a href="bonuses.html" class="account-sidebar__link">
+                            <svg class="account-sidebar__icon" width="20" height="20" viewBox="0 0 20 20">
+                                <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <text x="10" y="14" text-anchor="middle" font-size="10" fill="currentColor">%</text>
+                            </svg>
+                            Бонусы
+                        </a>
+                    </li>
+                    
+                    <li class="account-sidebar__menu-item">
+                        <a href="security.html" class="account-sidebar__link">
+                            <svg class="account-sidebar__icon" width="20" height="20" viewBox="0 0 20 20">
+                                <rect x="3" y="7" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="10" cy="12" r="2" fill="currentColor"/>
+                                <path d="M7 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Пароль и безопасность
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="account-sidebar__footer">
+                <button class="account-sidebar__logout" type="button">
+                    <svg class="account-sidebar__icon" width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M9 3H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="16,17 21,12 16,7" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Выйти
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="account-content">
+            <div class="account-header">
+                <h1 class="account-title">Моя информация</h1>
+                <p class="account-subtitle">Управляйте своими персональными данными</p>
+            </div>
+
+            <div class="profile-form">
+                <form class="form" id="profile-form">
+                    <div class="form__section">
+                        <h2 class="form__section-title">Личные данные</h2>
+                        
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="firstName" class="form__label">Имя</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    class="form__input" 
+                                    value="Анна"
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="lastName" class="form__label">Фамилия</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    class="form__input" 
+                                    value="Иванова"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="phone" class="form__label">Телефон</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    class="form__input" 
+                                    value="+7 (999) 123-45-67"
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="email" class="form__label">Email</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    class="form__input" 
+                                    value="anna.ivanova@email.com"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="birthDate" class="form__label">Дата рождения</label>
+                            <input 
+                                type="date" 
+                                id="birthDate" 
+                                class="form__input" 
+                                value="1990-03-15"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form__section">
+                        <h2 class="form__section-title">Адрес доставки</h2>
+                        
+                        <div class="form__group">
+                            <label for="address" class="form__label">Адрес</label>
+                            <input 
+                                type="text" 
+                                id="address" 
+                                class="form__input" 
+                                placeholder="Улица, дом, квартира"
+                            >
+                        </div>
+
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="city" class="form__label">Город</label>
+                                <input 
+                                    type="text" 
+                                    id="city" 
+                                    class="form__input" 
+                                    placeholder="Москва"
+                                >
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="zipCode" class="form__label">Индекс</label>
+                                <input 
+                                    type="text" 
+                                    id="zipCode" 
+                                    class="form__input" 
+                                    placeholder="123456"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__actions">
+                        <button type="submit" class="btn btn--green btn--lg">
+                            Сохранить изменения
+                        </button>
+                        <button type="button" class="btn btn--secondary btn--lg">
+                            Отменить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../utils/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileForm = document.getElementById('profile-form');
+            
+            if (profileForm) {
+                profileForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(profileForm);
+                    const data = {};
+                    
+                    // In a real implementation, this would send data to the server
+                    // For now, we'll just show a success message
+                    alert('Профиль успешно обновлен!');
+                    
+                    // Reset form dirty state
+                    profileForm.classList.remove('form--dirty');
+                });
+                
+                // Add dirty state tracking
+                const inputs = profileForm.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.addEventListener('change', function() {
+                        profileForm.classList.add('form--dirty');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+<style>
+/* Account Layout */
+.account-layout {
+    display: flex;
+    min-height: calc(100vh - var(--header-height));
+}
+
+.account-content {
+    flex: 1;
+    padding: var(--space-8);
+    background-color: var(--gray-50);
+}
+
+.account-header {
+    margin-bottom: var(--space-8);
+}
+
+.account-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-normal);
+    color: var(--black);
+    margin-bottom: var(--space-2);
+}
+
+.account-subtitle {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+}
+
+/* Profile Form */
+.profile-form {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+}
+
+.form__section {
+    margin-bottom: var(--space-8);
+}
+
+.form__section:last-child {
+    margin-bottom: 0;
+}
+
+.form__section-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    color: var(--black);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.form__group {
+    margin-bottom: var(--space-4);
+}
+
+.form__label {
+    display: block;
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--black);
+    margin-bottom: var(--space-2);
+}
+
+.form__input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    transition: border-color var(--transition-fast);
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(194, 224, 40, 0.1);
+}
+
+.form__actions {
+    display: flex;
+    gap: var(--space-4);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--gray-200);
+}
+
+/* Form dirty state */
+.form--dirty .btn[type="submit"] {
+    background-color: var(--green-dark);
+    color: var(--white);
+    border-color: var(--green-dark);
+}
+
+/* Account Sidebar Styles */
+.account-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    background-color: var(--white);
+    border-right: 1px solid var(--gray-200);
+    padding: var(--space-6);
+}
+
+.account-sidebar__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: var(--space-6);
+}
+
+.account-sidebar__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.account-sidebar__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.account-sidebar__user-info {
+    flex: 1;
+}
+
+.account-sidebar__name {
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--black);
+    margin-bottom: var(--space-1);
+}
+
+.account-sidebar__email {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+}
+
+.account-sidebar__nav {
+    flex: 1;
+}
+
+.account-sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.account-sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-size: var(--text-base);
+}
+
+.account-sidebar__link:hover {
+    background-color: var(--gray-50);
+    color: var(--black);
+}
+
+.account-sidebar__link--active {
+    background-color: var(--green);
+    color: var(--black);
+    font-weight: var(--font-medium);
+}
+
+.account-sidebar__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.account-sidebar__footer {
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--gray-200);
+}
+
+.account-sidebar__logout {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    color: var(--gray-600);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: var(--text-base);
+    width: 100%;
+    text-align: left;
+}
+
+.account-sidebar__logout:hover {
+    background-color: var(--gray-50);
+    color: var(--black);
+}
+
+.header__action-btn--active {
+    background-color: var(--green);
+    border-radius: var(--radius-sm);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .account-layout {
+        flex-direction: column;
+    }
+    
+    .account-sidebar {
+        width: 100%;
+        padding: var(--space-4);
+    }
+    
+    .account-content {
+        padding: var(--space-4);
+    }
+    
+    .form__row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form__actions {
+        flex-direction: column;
+    }
+}
+</style>

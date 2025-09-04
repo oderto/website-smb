@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMB - Каталог дизайнерских сумок. Женские и мужские сумки, аксессуары.">
+    <title>Каталог - SMB</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/smb-logo.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <!-- Hamburger Menu Button (Visible on mobile) -->
+            <button class="header__hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+            </button>
+
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <a href="../index.html" class="header__nav-link">Главная</a>
+                <a href="index.html" class="header__nav-link header__nav-link--active">Каталог</a>
+                <a href="../info/about.html" class="header__nav-link">О бренде</a>
+            </nav>
+
+            <div class="header__logo">
+                <a href="../index.html" aria-label="SMB Home">
+                    <img src="../assets/icons/smb-logo.svg" alt="SMB Logo" width="63" height="36">
+                </a>
+            </div>
+
+            <div class="header__actions">
+                <button class="header__action-btn" type="button" aria-label="Search products" data-action="search">
+                    <img src="../assets/icons/search-icon.svg" alt="" width="18" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="View favorites" data-action="favorites">
+                    <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="Shopping cart" data-action="cart">
+                    <img src="../assets/icons/shopping-bag-icon.svg" alt="" width="16" height="20">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="User account" data-action="account">
+                    <img src="../assets/icons/person-icon.svg" alt="" width="20" height="18">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation (Hidden by default, shown on mobile menu toggle) -->
+    <nav class="mobile-nav mobile-nav--drawer hidden" role="navigation" aria-label="Mobile navigation" id="mobile-nav">
+        <div class="mobile-nav__overlay"></div>
+        <div class="mobile-nav__content">
+            <button class="mobile-nav__close" type="button" aria-label="Close menu">×</button>
+            <ul class="mobile-nav__list">
+                <li><a href="../index.html" class="mobile-nav__link">Главная</a></li>
+                <li><a href="index.html" class="mobile-nav__link">Каталог</a></li>
+                <li><a href="../info/about.html" class="mobile-nav__link">О бренде</a></li>
+                <li><a href="../shop/cart.html" class="mobile-nav__link">Корзина</a></li>
+                <li><a href="../shop/favorites.html" class="mobile-nav__link">Избранное</a></li>
+                <li><a href="../account/profile.html" class="mobile-nav__link">Аккаунт</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="catalog">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="../index.html" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current">
+                        <span class="breadcrumb__text">Каталог</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="catalog__container">
+            <!-- Sidebar Filters -->
+            <aside class="catalog__sidebar">
+                <div class="filters">
+                    <h2 class="filters__title">Фильтры</h2>
+                    
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Категория</h3>
+                        <div class="filter-group__content">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="women" checked>
+                                <span class="filter-checkbox__checkmark"></span>
+                                <span class="filter-checkbox__label">Женские сумки</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="men">
+                                <span class="filter-checkbox__checkmark"></span>
+                                <span class="filter-checkbox__label">Мужские сумки</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="accessories">
+                                <span class="filter-checkbox__checkmark"></span>
+                                <span class="filter-checkbox__label">Аксессуары</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Цена</h3>
+                        <div class="filter-group__content">
+                            <div class="price-range">
+                                <div class="price-range__inputs">
+                                    <input type="number" id="price-min" class="price-range__input" placeholder="От" min="0" value="5000">
+                                    <span class="price-range__separator">—</span>
+                                    <input type="number" id="price-max" class="price-range__input" placeholder="До" min="0" value="50000">
+                                </div>
+                                <div class="price-range__slider">
+                                    <div class="price-range__track">
+                                        <div class="price-range__track-progress" id="price-range-progress"></div>
+                                    </div>
+                                    <div class="price-range__thumb price-range__thumb--min" id="price-thumb-min"></div>
+                                    <div class="price-range__thumb price-range__thumb--max" id="price-thumb-max"></div>
+                                    <input type="range" class="price-range__input-range" id="price-range-min" min="0" max="100000" value="5000">
+                                    <input type="range" class="price-range__input-range" id="price-range-max" min="0" max="100000" value="50000">
+                                </div>
+                                <div class="price-range__value-indicators">
+                                    <span>0 ₽</span>
+                                    <span>100 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color Filter -->
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Цвет</h3>
+                        <div class="filter-group__content">
+                            <div class="color-filters">
+                                <label class="color-filter">
+                                    <input type="checkbox" name="color" value="black">
+                                    <span class="color-filter__swatch" style="background-color: #000000;"></span>
+                                    <span class="color-filter__label">Черный</span>
+                                </label>
+                                <label class="color-filter">
+                                    <input type="checkbox" name="color" value="brown">
+                                    <span class="color-filter__swatch" style="background-color: #8B4513;"></span>
+                                    <span class="color-filter__label">Коричневый</span>
+                                </label>
+                                <label class="color-filter">
+                                    <input type="checkbox" name="color" value="tan">
+                                    <span class="color-filter__swatch" style="background-color: #D2B48C;"></span>
+                                    <span class="color-filter__label">Бежевый</span>
+                                </label>
+                                <label class="color-filter">
+                                    <input type="checkbox" name="color" value="gray">
+                                    <span class="color-filter__swatch" style="background-color: #808080;"></span>
+                                    <span class="color-filter__label">Серый</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Size Filter -->
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Размер</h3>
+                        <div class="filter-group__content">
+                            <div class="size-filters">
+                                <label class="size-filter">
+                                    <input type="checkbox" name="size" value="small">
+                                    <span class="size-filter__label">Маленький</span>
+                                </label>
+                                <label class="size-filter">
+                                    <input type="checkbox" name="size" value="medium">
+                                    <span class="size-filter__label">Средний</span>
+                                </label>
+                                <label class="size-filter">
+                                    <input type="checkbox" name="size" value="large">
+                                    <span class="size-filter__label">Большой</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn--secondary btn--sm filters__reset" type="button">
+                        Сбросить фильтры
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="catalog__content">
+                <!-- Catalog Header -->
+                <div class="catalog__header">
+                    <div class="catalog__title-section">
+                        <h1 class="catalog__title">Каталог</h1>
+                        <p class="catalog__count">Найдено: <span id="products-count">12</span> товаров</p>
+                    </div>
+                    
+                    <div class="catalog__controls">
+                        <div class="sort-select">
+                            <label for="sort" class="sort-select__label">Сортировка:</label>
+                            <select id="sort" class="sort-select__dropdown">
+                                <option value="popular">По популярности</option>
+                                <option value="price-asc">Цена: по возрастанию</option>
+                                <option value="price-desc">Цена: по убыванию</option>
+                                <option value="newest">Сначала новые</option>
+                                <option value="name">По названию</option>
+                            </select>
+                        </div>
+                        
+                        <div class="view-toggle">
+                            <button class="view-toggle__btn view-toggle__btn--active" data-view="grid" aria-label="Показать сетью">
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <rect x="1" y="1" width="6" height="6" fill="currentColor"/>
+                                    <rect x="9" y="1" width="6" height="6" fill="currentColor"/>
+                                    <rect x="1" y="9" width="6" height="6" fill="currentColor"/>
+                                    <rect x="9" y="9" width="6" height="6" fill="currentColor"/>
+                                </svg>
+                            </button>
+                            <button class="view-toggle__btn" data-view="list" aria-label="Показать списком">
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <rect x="1" y="3" width="14" height="2" fill="currentColor"/>
+                                    <rect x="1" y="7" width="14" height="2" fill="currentColor"/>
+                                    <rect x="1" y="11" width="14" height="2" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="catalog__products" id="products-grid">
+                    <!-- Basic MINI ROSA Card -->
+                    <article class="product-card" data-product-id="mini-rosa-1" data-category="women" data-size="medium">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--mini-rosa" 
+                                role="img"
+                                aria-label="MINI ROSA product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="mini-rosa-1"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="product.html?id=mini-rosa-1">MINI ROSA</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">29 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                                <button class="product-card__color color--tan" type="button" aria-label="Select tan color" data-color="tan"></button>
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--light-gray" type="button" aria-label="Select light gray color" data-color="light-gray"></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MOSS Card -->
+                    <article class="product-card" data-product-id="moss-1" data-category="women" data-size="medium">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--moss" 
+                                role="img"
+                                aria-label="Moss product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="moss-1"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="product.html?id=moss-1">MOSS</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">35 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CLASSIC BAG Card -->
+                    <article class="product-card" data-product-id="classic-bag-1" data-category="women" data-size="large">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--classic" 
+                                role="img"
+                                aria-label="Classic Bag product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="classic-bag-1"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="product.html?id=classic-bag-1">CLASSIC BAG</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">42 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW Product Card with Sale Price -->
+                    <article class="product-card product-card--sale" data-product-id="mini-rosa-sale" data-category="women" data-size="small">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--mini-rosa" 
+                                role="img"
+                                aria-label="MINI ROSA product image"
+                            ></div>
+                            
+                            <div class="product-card__badge" role="text">NEW</div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="mini-rosa-sale"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="product.html?id=mini-rosa-sale">MINI ROSA</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-original">29 000 ₽</span>
+                                <span class="product-card__price-current">21 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                                <button class="product-card__color color--tan" type="button" aria-label="Select tan color" data-color="tan"></button>
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--light-gray" type="button" aria-label="Select light gray color" data-color="light-gray"></button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- URBAN BAG Card (Men's category) -->
+                    <article class="product-card" data-product-id="urban-bag-1" data-category="men" data-size="medium">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--classic" 
+                                role="img"
+                                aria-label="Urban Bag product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="urban-bag-1"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="product.html?id=urban-bag-1">URBAN BAG</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">38 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- TRAVEL BAG Card (Men's category) -->
+                    <article class="product-card" data-product-id="travel-bag-1" data-category="men" data-size="large">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--moss" 
+                                role="img"
+                                aria-label="Travel Bag product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="travel-bag-1"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="product.html?id=travel-bag-1">TRAVEL BAG</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">45 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- WALLET Card (Accessory category) -->
+                    <article class="product-card" data-product-id="wallet-1" data-category="accessories" data-size="small">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--mini-rosa" 
+                                role="img"
+                                aria-label="Wallet product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="wallet-1"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="product.html?id=wallet-1">WALLET</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">15 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                                <button class="product-card__color color--tan" type="button" aria-label="Select tan color" data-color="tan"></button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- CARDHOLDER Card (Accessory category) -->
+                    <article class="product-card" data-product-id="cardholder-1" data-category="accessories" data-size="small">
+                        <div class="product-card__image-container">
+                            <div 
+                                class="product-card__image product-image--classic" 
+                                role="img"
+                                aria-label="Cardholder product image"
+                            ></div>
+                            
+                            <button 
+                                class="product-card__favorite" 
+                                type="button" 
+                                aria-label="Add to favorites"
+                                data-product-id="cardholder-1"
+                                data-action="toggle-favorite"
+                            >
+                                <img src="../assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                            </button>
+                        </div>
+
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">
+                                <a href="product.html?id=cardholder-1">CARDHOLDER</a>
+                            </h3>
+
+                            <div class="product-card__price">
+                                <span class="product-card__price-current">9 000 ₽</span>
+                            </div>
+
+                            <div class="product-card__colors" role="group" aria-label="Available colors">
+                                <button class="product-card__color color--black" type="button" aria-label="Select black color" data-color="black"></button>
+                                <button class="product-card__color color--brown" type="button" aria-label="Select brown color" data-color="brown"></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="pagination" aria-label="Навигация по страницам">
+                    <ul class="pagination__list">
+                        <li class="pagination__item">
+                            <button class="pagination__link pagination__link--disabled" disabled>
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M10 12l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Назад
+                            </button>
+                        </li>
+                        <li class="pagination__item">
+                            <button class="pagination__link pagination__link--active">1</button>
+                        </li>
+                        <li class="pagination__item">
+                            <button class="pagination__link">2</button>
+                        </li>
+                        <li class="pagination__item">
+                            <button class="pagination__link">3</button>
+                        </li>
+                        <li class="pagination__item">
+                            <span class="pagination__ellipsis">...</span>
+                        </li>
+                        <li class="pagination__item">
+                            <button class="pagination__link">10</button>
+                        </li>
+                        <li class="pagination__item">
+                            <button class="pagination__link">
+                                Вперед
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M6 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../utils/main.js" defer></script>
+    <script src="catalog.js" defer></script>
+    <script src="product-cards.js" defer></script>
+</body>
+</html>

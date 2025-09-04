@@ -1,0 +1,256 @@
+/* ============================================================================
+   SMB Website - Main Stylesheet
+   Entry point for all styles
+   ============================================================================ */
+
+/* Import base styles */
+@import './base/globals.css';
+
+/* Import component styles */
+@import './components/components.css';
+
+/* Import page styles */
+@import './catalog.css';
+
+/* ============================================================================
+   CUSTOM STYLES FOR SPECIFIC IMPLEMENTATIONS
+   ============================================================================ */
+
+/* Background images for sections */
+.hero--bag {
+  background-image: url('../assets/images/hero-background-686e27.png');
+}
+
+.hero--gift-card {
+  background-image: url('../assets/images/gift-card-background.png');
+}
+
+.category--woman {
+  background-image: url('../assets/images/woman-section.png');
+}
+
+.category--man {
+  background-image: url('../assets/images/man-section-48751d.png');
+}
+
+/* Product card image backgrounds */
+.product-image--1 {
+  background-image: url('../assets/images/product-1.png');
+}
+
+.product-image--moss {
+  background-image: url('../assets/images/product-moss-15277b.png');
+}
+
+.product-image--3 {
+  background-image: url('../assets/images/product-3.png');
+}
+
+.product-image--main {
+  background-image: url('../assets/images/main-product-image.png');
+}
+
+/* Featured product section with background */
+.featured-product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  background-color: var(--gray-50);
+  background-image: url('../assets/images/main-product-image.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.featured-product::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, var(--gray-50) 30px, transparent 30px),
+    radial-gradient(circle at 75% 75%, var(--gray-50) 30px, transparent 30px);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.featured-product__title {
+  position: relative;
+  z-index: 2;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  color: var(--black);
+  text-align: center;
+}
+
+/* Instagram post backgrounds */
+.instagram-post--1 {
+  background-image: url('../assets/images/instagram-post-1.png');
+}
+
+.instagram-post--2 {
+  background-image: url('../assets/images/instagram-post-2.png');
+}
+
+.instagram-post--3 {
+  background-image: url('../assets/images/instagram-post-3.png');
+}
+
+.instagram-post--4 {
+  background-image: url('../assets/images/instagram-post-4-2f8fe1.png');
+}
+
+/* Color variants for product cards - Updated from Figma data */
+.color--brown {
+  background-color: #5E4F37;
+}
+
+.color--tan {
+  background-color: #A86738;
+}
+
+.color--black {
+  background-color: #000000;
+}
+
+.color--light-gray {
+  background-color: #DEDEDE;
+}
+
+/* Product Image Classes from Figma */
+.product-image--1,
+.product-image--mini-rosa {
+  background-image: url('../assets/images/product-1.png');
+}
+
+.product-image--moss {
+  background-image: url('../assets/images/product-moss-15277b.png');
+}
+
+.product-image--3,
+.product-image--classic {
+  background-image: url('../assets/images/product-3.png');
+}
+
+/* Loading and Unavailable States */
+.product-card--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.product-card--loading .product-card__image {
+  background: #F5F5F5;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card--loading .product-card__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.skeleton-text {
+  background: #F5F5F5;
+  color: transparent;
+  border-radius: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-color {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F5F5F5;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.product-card--unavailable {
+  opacity: 0.5;
+}
+
+.product-card--unavailable .product-card__image::after {
+  content: 'Временно недоступно';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #555555;
+  letter-spacing: 0.5px;
+}
+
+/* Animation enhancements */
+@media (prefers-reduced-motion: no-preference) {
+  .product-card {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .product-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .btn {
+    transition: all var(--transition-fast);
+  }
+  
+  .btn:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .footer,
+  .scroll-banner,
+  .btn {
+    display: none !important;
+  }
+  
+  .section--hero {
+    height: auto;
+    padding: var(--space-8);
+    background: none !important;
+  }
+  
+  .section--hero::before {
+    display: none;
+  }
+  
+  .section__title--hero {
+    color: var(--black) !important;
+  }
+  
+  .product-card {
+    break-inside: avoid;
+    margin-bottom: var(--space-4);
+  }
+  
+  .product-card__image-container {
+    height: 200px;
+  }
+}

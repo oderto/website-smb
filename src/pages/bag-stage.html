@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMB - Bag Stage. Уникальная коллекция дизайнерских сумок.">
+    <title>Bag Stage - SMB</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/smb-logo.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <!-- Hamburger Menu Button (Visible on mobile) -->
+            <button class="header__hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+                <span class="header__hamburger-line"></span>
+            </button>
+
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="header__nav-link">Главная</a>
+                <a href="catalog/index.html" class="header__nav-link">Каталог</a>
+                <a href="info/about.html" class="header__nav-link">О бренде</a>
+            </nav>
+
+            <div class="header__logo">
+                <a href="index.html" aria-label="SMB Home">
+                    <img src="assets/icons/smb-logo.svg" alt="SMB Logo" width="63" height="36">
+                </a>
+            </div>
+
+            <div class="header__actions">
+                <button class="header__action-btn" type="button" aria-label="Search products" data-action="search">
+                    <img src="assets/icons/search-icon.svg" alt="" width="18" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="View favorites" data-action="favorites">
+                    <img src="assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="Shopping cart" data-action="cart">
+                    <img src="assets/icons/shopping-bag-icon.svg" alt="" width="16" height="20">
+                </button>
+                <button class="header__action-btn" type="button" aria-label="User account" data-action="account">
+                    <img src="assets/icons/person-icon.svg" alt="" width="20" height="18">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation (Hidden by default, shown on mobile menu toggle) -->
+    <nav class="mobile-nav mobile-nav--drawer hidden" role="navigation" aria-label="Mobile navigation" id="mobile-nav">
+        <div class="mobile-nav__overlay"></div>
+        <div class="mobile-nav__content">
+            <button class="mobile-nav__close" type="button" aria-label="Close menu">×</button>
+            <ul class="mobile-nav__list">
+                <li><a href="index.html" class="mobile-nav__link">Главная</a></li>
+                <li><a href="catalog/index.html" class="mobile-nav__link">Каталог</a></li>
+                <li><a href="info/about.html" class="mobile-nav__link">О бренде</a></li>
+                <li><a href="shop/cart.html" class="mobile-nav__link">Корзина</a></li>
+                <li><a href="shop/favorites.html" class="mobile-nav__link">Избранное</a></li>
+                <li><a href="account/profile.html" class="mobile-nav__link">Аккаунт</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="bag-stage">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="index.html" class="breadcrumb__link">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current">
+                        <span class="breadcrumb__text">Bag Stage</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="bag-stage__header">
+                <h1 class="bag-stage__title">Bag Stage</h1>
+                <p class="bag-stage__subtitle">Уникальная коллекция дизайнерских сумок, созданных для тех, кто ценит индивидуальность и стиль</p>
+            </div>
+
+            <div class="bag-stage__content">
+                <section class="bag-stage__hero">
+                    <div class="bag-stage__hero-image">
+                        <img src="assets/images/bag-stage-hero.png" alt="Bag Stage Collection" class="bag-stage__hero-img">
+                    </div>
+                    <div class="bag-stage__hero-content">
+                        <h2 class="bag-stage__hero-title">Новая эра сумок</h2>
+                        <p class="bag-stage__hero-description">Коллекция Bag Stage - это воплощение смелых идей и безупречного вкуса. Каждая сумка создана с учетом последних тенденций моды и требований современной жизни.</p>
+                        <a href="catalog/index.html" class="btn btn--green btn--lg">Смотреть коллекцию</a>
+                    </div>
+                </section>
+
+                <section class="bag-stage__section">
+                    <h2 class="bag-stage__section-title">Философия коллекции</h2>
+                    <div class="bag-stage__philosophy">
+                        <div class="bag-stage__philosophy-item">
+                            <div class="bag-stage__philosophy-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="bag-stage__philosophy-title">Качество</h3>
+                            <p class="bag-stage__philosophy-description">Мы используем только лучшие материалы и проверенные технологии производства</p>
+                        </div>
+                        
+                        <div class="bag-stage__philosophy-item">
+                            <div class="bag-stage__philosophy-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <h3 class="bag-stage__philosophy-title">Индивидуальность</h3>
+                            <p class="bag-stage__philosophy-description">Каждая сумка - это выражение вашей уникальной личности и стиля</p>
+                        </div>
+                        
+                        <div class="bag-stage__philosophy-item">
+                            <div class="bag-stage__philosophy-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <path d="M9 7h1m-1 4h1m-1 4h1"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h3 class="bag-stage__philosophy-title">Сообщество</h3>
+                            <p class="bag-stage__philosophy-description">Мы создаем не просто сумки, а сообщество единомышленников</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bag-stage__section">
+                    <h2 class="bag-stage__section-title">Популярные модели</h2>
+                    <div class="product-grid">
+                        <!-- Product 1 -->
+                        <article class="product-card" data-product-id="bag-stage-1">
+                            <div class="product-card__image-container">
+                                <div class="product-card__image product-image--1" role="img" aria-label="BAG STAGE MINI product image"></div>
+                                <button class="product-card__favorite" type="button" aria-label="Add to favorites" data-action="toggle-favorite" data-product-id="bag-stage-1">
+                                    <img src="assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                                </button>
+                            </div>
+                            <div class="product-card__info">
+                                <h3 class="product-card__title">
+                                    <a href="catalog/product.html?id=bag-stage-1">BAG STAGE MINI</a>
+                                </h3>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-current">35 000 ₽</span>
+                                </div>
+                                <div class="product-card__colors">
+                                    <button class="product-card__color color--brown" type="button" aria-label="Select brown" data-action="select-color" data-color="brown"></button>
+                                    <button class="product-card__color color--black" type="button" aria-label="Select black" data-action="select-color" data-color="black"></button>
+                                    <button class="product-card__color color--tan" type="button" aria-label="Select tan" data-action="select-color" data-color="tan"></button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Product 2 -->
+                        <article class="product-card" data-product-id="bag-stage-2">
+                            <div class="product-card__image-container">
+                                <div class="product-card__image product-image--3" role="img" aria-label="BAG STAGE MIDI product image"></div>
+                                <button class="product-card__favorite" type="button" aria-label="Add to favorites" data-action="toggle-favorite" data-product-id="bag-stage-2">
+                                    <img src="assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                                </button>
+                                <div class="product-card__badge product-card__badge--new">NEW</div>
+                            </div>
+                            <div class="product-card__info">
+                                <h3 class="product-card__title">
+                                    <a href="catalog/product.html?id=bag-stage-2">BAG STAGE MIDI</a>
+                                </h3>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-current">42 000 ₽</span>
+                                </div>
+                                <div class="product-card__colors">
+                                    <button class="product-card__color color--brown" type="button" aria-label="Select brown" data-action="select-color" data-color="brown"></button>
+                                    <button class="product-card__color color--black" type="button" aria-label="Select black" data-action="select-color" data-color="black"></button>
+                                    <button class="product-card__color color--light-gray" type="button" aria-label="Select light gray" data-action="select-color" data-color="light-gray"></button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Product 3 -->
+                        <article class="product-card" data-product-id="bag-stage-3">
+                            <div class="product-card__image-container">
+                                <div class="product-card__image product-image--moss" role="img" aria-label="BAG STAGE MAXI product image"></div>
+                                <button class="product-card__favorite product-card__favorite--active" type="button" aria-label="Remove from favorites" data-action="toggle-favorite" data-product-id="bag-stage-3">
+                                    <img src="assets/icons/favorite-filled.svg" alt="" width="24" height="22">
+                                </button>
+                            </div>
+                            <div class="product-card__info">
+                                <h3 class="product-card__title">
+                                    <a href="catalog/product.html?id=bag-stage-3">BAG STAGE MAXI</a>
+                                </h3>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-current">49 000 ₽</span>
+                                </div>
+                                <div class="product-card__colors">
+                                    <button class="product-card__color color--brown" type="button" aria-label="Select brown" data-action="select-color" data-color="brown"></button>
+                                    <button class="product-card__color color--black" type="button" aria-label="Select black" data-action="select-color" data-color="black"></button>
+                                    <button class="product-card__color color--tan" type="button" aria-label="Select tan" data-action="select-color" data-color="tan"></button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Product 4 -->
+                        <article class="product-card" data-product-id="bag-stage-4">
+                            <div class="product-card__image-container">
+                                <div class="product-card__image product-image--1" role="img" aria-label="BAG STAGE CROSSBODY product image"></div>
+                                <button class="product-card__favorite" type="button" aria-label="Add to favorites" data-action="toggle-favorite" data-product-id="bag-stage-4">
+                                    <img src="assets/icons/favorite-icon.svg" alt="" width="20" height="18">
+                                </button>
+                                <div class="product-card__badge product-card__badge--sale">SALE</div>
+                            </div>
+                            <div class="product-card__info">
+                                <h3 class="product-card__title">
+                                    <a href="catalog/product.html?id=bag-stage-4">BAG STAGE CROSSBODY</a>
+                                </h3>
+                                <div class="product-card__price">
+                                    <span class="product-card__price-original">32 000 ₽</span>
+                                    <span class="product-card__price-current">28 000 ₽</span>
+                                </div>
+                                <div class="product-card__colors">
+                                    <button class="product-card__color color--brown" type="button" aria-label="Select brown" data-action="select-color" data-color="brown"></button>
+                                    <button class="product-card__color color--black" type="button" aria-label="Select black" data-action="select-color" data-color="black"></button>
+                                    <button class="product-card__color color--light-gray" type="button" aria-label="Select light gray" data-action="select-color" data-color="light-gray"></button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="bag-stage__section">
+                    <h2 class="bag-stage__section-title">Процесс создания</h2>
+                    <div class="bag-stage__process">
+                        <div class="bag-stage__process-step">
+                            <div class="bag-stage__process-number">1</div>
+                            <h3 class="bag-stage__process-title">Идея</h3>
+                            <p class="bag-stage__process-description">Наши дизайнеры разрабатывают концепцию каждой новой модели</p>
+                        </div>
+                        
+                        <div class="bag-stage__process-step">
+                            <div class="bag-stage__process-number">2</div>
+                            <h3 class="bag-stage__process-title">Выбор материалов</h3>
+                            <p class="bag-stage__process-description">Отбираем только лучшие материалы и фурнитуру</p>
+                        </div>
+                        
+                        <div class="bag-stage__process-step">
+                            <div class="bag-stage__process-number">3</div>
+                            <h3 class="bag-stage__process-title">Производство</h3>
+                            <p class="bag-stage__process-description">Каждая сумка создается вручную мастерами с многолетним опытом</p>
+                        </div>
+                        
+                        <div class="bag-stage__process-step">
+                            <div class="bag-stage__process-number">4</div>
+                            <h3 class="bag-stage__process-title">Контроль качества</h3>
+                            <p class="bag-stage__process-description">Строго проверяем каждую деталь перед отправкой клиенту</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bag-stage__section bag-stage__cta">
+                    <div class="bag-stage__cta-content">
+                        <h2 class="bag-stage__cta-title">Станьте частью коллекции Bag Stage</h2>
+                        <p class="bag-stage__cta-description">Подпишитесь на нашу рассылку и получайте эксклюзивные предложения и новости о новых коллекциях</p>
+                        <form class="bag-stage__cta-form">
+                            <input type="email" class="bag-stage__cta-input" placeholder="Ваш email" required>
+                            <button type="submit" class="btn btn--green">Подписаться</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__nav">
+            <a href="index.html" class="footer__nav-link">Store</a>
+            <a href="info/about.html" class="footer__nav-link">О бренде</a>
+            <a href="bag-stage.html" class="footer__nav-link">Bag Stage</a>
+            <a href="gift-cards.html" class="footer__nav-link">Подарочные карты</a>
+        </div>
+        
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Контакты</h3>
+                    <div class="footer__section-content">
+                        <a href="tel:88000000000" class="footer__link">8(800)000-00-00</a>
+                        <a href="mailto:info@smb.ru" class="footer__link">INFO@SMB.RU</a>
+                        <a href="#" class="footer__link">WHATSAPP</a>
+                        <a href="#" class="footer__link">TELEGRAM</a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">ПЛАТЕЖНЫЕ СИСТЕМЫ</h3>
+                    <div class="footer__section-content">
+                        <div class="footer__payment-logos">
+                            <img src="assets/icons/mir-logo.svg" alt="МИР" width="54" height="15">
+                            <img src="assets/icons/visa-logo.svg" alt="Visa" width="49" height="15">
+                            <img src="assets/icons/mastercard-logo.svg" alt="Mastercard" width="37" height="23">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Покупателям</h3>
+                    <div class="footer__section-content">
+                        <a href="delivery.html" class="footer__link">Доставка</a>
+                        <a href="payment.html" class="footer__link">Оплата</a>
+                        <a href="returns.html" class="footer__link">Возврат</a>
+                        <a href="loyalty.html" class="footer__link">Программа лояльности</a>
+                        <a href="gift-card-terms.html" class="footer__link">Правила приобретения и применения подарочных карт</a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Безопасность данных</h3>
+                    <div class="footer__section-content">
+                        <a href="privacy-policy.html" class="footer__link">Политика обработки персональных данных</a>
+                        <a href="privacy-consent.html" class="footer__link">Согласие на обработку персональных данных</a>
+                        <a href="public-offer.html" class="footer__link">Публичная оферта</a>
+                        <a href="user-agreement.html" class="footer__link">Пользовательское соглашение</a>
+                        <a href="marketing-consent.html" class="footer__link">Согласие на получение рекламной рассылки</a>
+                        <a href="metrics-consent.html" class="footer__link">Согласие на обработку персональных данных, собираемых метрическими системами</a>
+                        <a href="cookies.html" class="footer__link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__legal">
+                <p class="footer__legal-text">ИП «ФАМИЛИЯ ИМЯ»</p>
+                <p class="footer__legal-text">ИНН 00000000 ОГРНИП 000000000000</p>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <p class="footer__bottom-text">© SMB 2025</p>
+            <p class="footer__bottom-text">Разработано Effect.Web</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="utils/main.js" defer></script>
+</body>
+</html>
+
+<style>
+/* Bag Stage Page Styles */
+.bag-stage {
+    background-color: var(--white);
+    min-height: calc(100vh - var(--header-height) - 200px);
+}
+
+.bag-stage__header {
+    text-align: center;
+    padding: var(--space-8) 0;
+}
+
+.bag-stage__title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-normal);
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: var(--space-4);
+}
+
+.bag-stage__subtitle {
+    font-size: var(--text-lg);
+    color: var(--gray-600);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: var(--leading-relaxed);
+}
+
+.bag-stage__section {
+    margin-bottom: var(--space-12);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.bag-stage__section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bag-stage__section-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+/* Hero Section */
+.bag-stage__hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+    margin-bottom: var(--space-12);
+}
+
+.bag-stage__hero-image {
+    position: relative;
+}
+
+.bag-stage__hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.bag-stage__hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.bag-stage__hero-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.bag-stage__hero-description {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: var(--leading-relaxed);
+}
+
+/* Philosophy Section */
+.bag-stage__philosophy {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-8);
+}
+
+.bag-stage__philosophy-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-4);
+}
+
+.bag-stage__philosophy-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green-dark);
+    background-color: var(--gray-50);
+    border-radius: 50%;
+}
+
+.bag-stage__philosophy-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    color: var(--black);
+}
+
+.bag-stage__philosophy-description {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: var(--leading-relaxed);
+}
+
+/* Process Section */
+.bag-stage__process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-8);
+}
+
+.bag-stage__process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-3);
+}
+
+.bag-stage__process-number {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green);
+    color: var(--black);
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    border-radius: 50%;
+}
+
+.bag-stage__process-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--black);
+}
+
+.bag-stage__process-description {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: var(--leading-relaxed);
+}
+
+/* CTA Section */
+.bag-stage__cta {
+    background-color: var(--gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-12);
+    text-align: center;
+    border: none;
+}
+
+.bag-stage__cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.bag-stage__cta-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.bag-stage__cta-description {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: var(--leading-relaxed);
+}
+
+.bag-stage__cta-form {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.bag-stage__cta-input {
+    flex: 1;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-full);
+    font-size: var(--text-base);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.bag-stage__cta-input:focus {
+    border-color: var(--green-dark);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .bag-stage__hero {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .bag-stage__hero-content {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .bag-stage__title {
+        font-size: var(--text-3xl);
+    }
+    
+    .bag-stage__subtitle {
+        font-size: var(--text-base);
+    }
+    
+    .bag-stage__section-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .bag-stage__hero-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .bag-stage__philosophy,
+    .bag-stage__process {
+        grid-template-columns: 1fr;
+    }
+    
+    .bag-stage__cta-form {
+        flex-direction: column;
+    }
+    
+    .bag-stage__cta-input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .bag-stage__header {
+        padding: var(--space-6) 0;
+    }
+    
+    .bag-stage__title {
+        font-size: var(--text-2xl);
+    }
+    
+    .bag-stage__subtitle {
+        font-size: var(--text-sm);
+    }
+    
+    .bag-stage__section {
+        margin-bottom: var(--space-8);
+        padding-bottom: var(--space-8);
+    }
+    
+    .bag-stage__section-title {
+        font-size: var(--text-xl);
+        margin-bottom: var(--space-6);
+    }
+    
+    .bag-stage__cta {
+        padding: var(--space-8);
+    }
+    
+    .bag-stage__cta-title {
+        font-size: var(--text-xl);
+    }
+    
+    .bag-stage__cta-description {
+        font-size: var(--text-sm);
+    }
+}
+</style>
